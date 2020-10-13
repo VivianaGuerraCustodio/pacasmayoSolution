@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { report } from 'process';
-import { SavingService } from '../services/saving.service';
+import { SavingService } from '../../services/saving.service';
 
 @Component({
-  selector: 'app-landing',
+  selector: 'app-landings',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
-   savings;
+  savings;
   constructor(public firestoreService: SavingService) { }
 
   ngOnInit(): void {
