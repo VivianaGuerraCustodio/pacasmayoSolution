@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+$colorprimario: #fe4a49;
+$colorprimario2: #2ab7ca;
+*
+ {
+    font-family: roboto, sans-serif;
+}
+@mixin width-height($width, $height) {
+    width: $width;
+    height: $height;
+}
+.enphasis {
+    color: $colorprimario;
+}
+.enphasisSecond {
+    color: $colorprimario2;
+}
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.btn-red-principal {
+    @include width-height(13em, 4em);
+    background-color: $colorprimario;
+    border: none;
+    color: white;
+    border-radius: 0.4em;
+    margin:1.1em;
+}
+.btn-outline-red {
+    @include width-height(13em, 4em);
+    background-color: transparent;
+    border: 1px solid $colorprimario;
+    color: $colorprimario;
+    border-radius: 0.4em;
+}

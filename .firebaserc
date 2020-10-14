@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "billeterafamiliar-5b443": {
+      "hosting": {
+        "angularApp": [
+          "billeterafamiliar-5b443"
+        ]
+      }
+    }
+  }
+}
