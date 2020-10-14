@@ -10,6 +10,10 @@ $colorsecundario: #fed766;
     width: $width;
     height: $height;
 }
+@mixin display-flex-direction($display,$flex-direction){
+    display:$display;
+    flex-direction:$flex-direction;
+}
 .enphasis {
     color: $colorprimario;
 }
