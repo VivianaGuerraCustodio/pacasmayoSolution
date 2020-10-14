@@ -3,18 +3,21 @@
     <div class="enphasisSecond center">
         <div>
             <p>¿Cuál es tu nombre?</p>
-            <input class="custom-input-text" type="text" placeholder="Perez Lopez" name="" id="">
+            <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Perez Lopez" name=""
+                id="">
             <p>¿Cuál es tu apellido?</p>
-            <input class="custom-input-text" type="text" placeholder="Perez Lopez" name="" id="">
+            <input class="custom-input-text" [(ngModel)]="titularApellido" type="text" placeholder="Perez Lopez" name=""
+                id="">
+
         </div>
         <p>Ingresa tu DNI*</p>
-        <input class="custom-input-text" type="number" placeholder="12345678" name="" id="">
+        <input class="custom-input-text" [(ngModel)]="titularDNI" type="number" placeholder="12345678" name="" id="">
         <p>Ingresa tu numero telefónico</p>
-        <input class="custom-input-text" type="text" name="" id="">
+        <input class="custom-input-text" [(ngModel)]="titularTelefono" type="text" name="" id="">
     </div>
-    <button class="btn-red-principal">Siguiente</button>
+    <button (click)="saveNewUser()" class="btn-red-principal">Siguiente</button>
 
-    <div >
+    <div>
         <p class="enphasis">Planifica un futuro mejor para tu familia un paso a la vez</p>
         <div class="row">
             <div class="column">
@@ -22,14 +25,14 @@
                 <input class="custom-input-text" type="text" placeholder="" name="" id="">
                 <input class="custom-input-text" type="text" placeholder="" name="" id="">
                 <input class="custom-input-text" type="text" name="" id="">
-                
+
             </div>
-            <div class="column"> 
+            <div class="column">
                 <p>DNI</p>
                 <input class="custom-input-text" type="number" name="" id="">
                 <input class="custom-input-text" type="number" name="" id="">
                 <input class="custom-input-text" type="number" name="" id="">
-        
+
             </div>
         </div>
         <div>
