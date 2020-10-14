@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { FirstViewComponent } from './components/first-view/first-view.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HomeComponent,
     RegisterComponent,
     PageNotFoundComponent,
+    FirstViewComponent,
   ],
   imports: [
     BrowserModule,
