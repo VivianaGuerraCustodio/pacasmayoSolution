@@ -1,16 +1,53 @@
 <div class="center container-register">
-    <p class="enphasis">¡En Yunta estamos orgullosos de <br> que trabajes para cumplir tus <br>sueños, estamos aqui para
-        darte <br>una
-        mano!</p>
+    <p class="enphasis">Yunta es tu aliado en el camino a <br> cumplir tus metas</p>
     <div class="enphasisSecond center">
-        <p>Ingresa tu Dni*</p>
-        <input class="custom-input-text" type="number" placeholder="12345678" name="" id="" >
-        <p>¿Cuál es el nombre de tu familia?</p>
-        <input class="custom-input-text" type="text" placeholder="Perez Lopez" name="" id="">
-        <p>Agrega a tu nucleo familiar</p>
-        <p>Ingresa el DNI de tu familiar</p>
-        <input class="custom-input-text" type="number" placeholder="12345678" name="" id="">
-        <button class="btn-red-principal">Registrar</button>
+        <div>
+            <p>¿Cuál es tu nombre?</p>
+            <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Perez Lopez" name=""
+                id="">
+            <p>¿Cuál es tu apellido?</p>
+            <input class="custom-input-text" [(ngModel)]="titularApellido" type="text" placeholder="Perez Lopez" name=""
+                id="">
+
+        </div>
+        <p>Ingresa tu DNI*</p>
+        <input class="custom-input-text" [(ngModel)]="titularDNI" type="number" placeholder="12345678" name="" id="">
+        <p>Ingresa tu numero telefónico</p>
+        <input class="custom-input-text" [(ngModel)]="titularTelefono" type="text" name="" id="">
     </div>
+    <button (click)="saveNewUser()" class="btn-red-principal">Siguiente</button>
+
+    <div>
+        <p class="enphasis">Planifica un futuro mejor para tu familia un paso a la vez</p>
+        <div class="row">
+            <div class="column">
+                <p>Nombre completo</p>
+                <input class="custom-input-text" type="text" placeholder="" name="" id="">
+                <input class="custom-input-text" type="text" placeholder="" name="" id="">
+                <input class="custom-input-text" type="text" name="" id="">
+
+            </div>
+            <div class="column">
+                <p>DNI</p>
+                <input class="custom-input-text" type="number" name="" id="">
+                <input class="custom-input-text" type="number" name="" id="">
+                <input class="custom-input-text" type="number" name="" id="">
+
+            </div>
+        </div>
+        <div>
+            <button class="btn-outline-red">Omitir</button>
+            <button class="btn-red-principal">Siguiente</button>
+        </div>
+    </div>
+    <div class="enphasisSecond">
+        <p>Crea tu contraseña</p>
+        <input class="custom-input-text" type="text" name="" id="">
+        <p>Escribe tu contraseña</p>
+        <input class="custom-input-text" type="text" name="" id="">
+        <p>Confirma tu contraseña</p>
+        <input class="custom-input-text" type="text" name="" id="">
+    </div>
+    <button class="btn-red-principal">Registrar</button>
 
 </div>

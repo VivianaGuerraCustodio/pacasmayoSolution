@@ -5,10 +5,15 @@ $colorsecundario: #fed766;
 * {
     font-family: roboto, sans-serif;
     scroll-behavior: smooth;
+    outline:none
 }
 @mixin width-height($width, $height) {
     width: $width;
     height: $height;
+}
+@mixin display-flex-direction($display,$flex-direction){
+    display:$display;
+    flex-direction:$flex-direction;
 }
 .enphasis {
     color: $colorprimario;

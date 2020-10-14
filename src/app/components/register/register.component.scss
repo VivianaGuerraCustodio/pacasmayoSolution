@@ -1,3 +1,19 @@
 @import "/src/styles.scss";
 
+.column {
+    @include display-flex-direction(flex, column);
+    justify-content: space-between;
+    
+}
 
+.row {
+    @include display-flex-direction(flex, row);
+    justify-content: space-between;
+    justify-items: center;
+    p{
+        color:$colorprimario2;
+    }
+    input[type="text"], input[type="number"]{
+        margin:4px;
+    }
+}
