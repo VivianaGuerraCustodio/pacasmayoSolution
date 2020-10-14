@@ -12,11 +12,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post('/', function (req, res) {
-    if (req.body.queryResult.action == "chatbotFRASE") {
-        let num1 = parseFloat(req.body.queryResult.parameters.num1);
-        let num2 = parseFloat(req.body.queryResult.parameters.num2);
-        const suma = num1 + num2
-        response = 'La suma es: ' + suma
+    if (req.body.queryResult.action == "input.welcome") {
+        response = `
+        ¡Hola!
+¡En Pacasmayo queremos que cumplas tus sueños! 😊
+¿Deseas crear una cuenta? o ¿Deseas hacer una consulta?
+        `
+        res.json({
+            "fulfillmentText": response
+        });
+    } else if (req.body.queryResult.action == "pedirDatosImportantes") {
+        let dni = parseFloat(req.body.queryResult.parameters.DNI);
+        let nombre = req.body.queryResult.parameters.nombre;
+        let apellido = req.body.queryResult.parameters.apellido;
+        response = 'Tu DNI es ' + dni + ' y tu nombre es ' + nombre + ' ' + apellido;
+
         res.json({
             "fulfillmentText": response
         });
