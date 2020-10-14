@@ -1,6 +1,121 @@
 @import "/src/styles.scss";
-.scroll-horizontal{
-    width:301px;
-    height: 193px;
-    overflow:scroll;
+// .scroll-horizontal{
+//     width:301px;
+//     height: 193px;
+//     overflow:scroll;
+// }
+.welcome {
+    margin: 10px 10px;
+    .total {
+        font-size: 30px;
+        font-weight: bold;
+    }
 }
+.boxes-content {
+    display: flex;
+    background-color: red;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .box-content {
+        background-color: blue;
+        margin: 5px;
+        // width: 120px;
+        // height: 90px;
+        @include width-height(6rem, 6.3rem);
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 10px;
+
+        // display: flex;
+        // // overflow: hidden;
+        // flex-wrap: wrap;
+    }
+}
+
+// BARRA DE PORCENTAJE CIRCULAR
+
+// body {
+//     margin: 0;
+//     padding: 0;
+//     font-family: sans-serif;
+//     // background: #111;
+//   }
+  
+//   h1 {
+//     text-align: center;
+//     color: #eee;
+//   }
+  
+  .skills-container {
+    // margin-top: 2em;
+    
+  }
+  
+  .circular-progress {
+    &,
+    &:before,
+    &:after{
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+    margin: auto;
+  
+    position: relative;
+    &:before, &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    &:before {
+      padding: .6em;
+      line-height: 140px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    &:after {
+      font-size: 1rem;
+      font-weight: normal;
+      text-transform: uppercase;
+      line-height: 230px;
+    }
+  }
+  
+  @function progress($percent){
+    $deg: $percent/100 * 180;
+    @return #{$deg}+deg;
+  }
+  
+  @mixin circular-progress($percent,$skill,$color,$bgcolor){  
+    $progress: progress($percent);
+    background: linear-gradient(0deg, $color 50%, rgba($color,.3) 50%);
+    transform: rotate($progress);
+    &:before,
+    &:after {
+      color: $color;
+    }
+    &:before {
+      background: $bgcolor content-box;
+      transform: rotate(-#{$progress});
+      content: "";
+    //   content: "#{$percent}%";
+    }
+    &:after {
+      background: linear-gradient(transparent 50%, $bgcolor 50%);
+    //   content: "#{$skill}";
+     content: "";
+      transform: rotate(-#{$progress}) scale(1.1);
+    }
+  }
+  
+  .html{
+    @include circular-progress(40,html,lighten(purple,30),blue);
+  }
+  .css{
+    @include circular-progress(60,css,lighten(purple,30),blue);
+  }
+  .javascript{
+    @include circular-progress(99,javascript,lighten(purple,30),blue);
+  }

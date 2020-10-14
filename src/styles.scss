@@ -44,25 +44,25 @@ $colorsecundario: #fed766;
     border: 3px solid $colorprimario2;
     border-radius: 7px;
 }
-.box-content {
-    border-radius: 7px;
-    width: 180px;
-    height: 100px;
-    display:flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    background-color: $colorprimario2;
-    margin: 7px;
-}
-.scroll-horizontal {
+// .box-content {
+//     border-radius: 7px;
+//     width: 180px;
+//     height: 100px;
+//     display:flex;
+//     flex-direction: row;
+//     box-sizing: border-box;
+//     background-color: $colorprimario2;
+//     margin: 7px;
+// }
+// .scroll-horizontal {
     
-    overflow: scroll;
-    width: 360px;
-    height: 500px;
-}
-.wrap {
-    display: flex;
-    box-sizing: border-box;
-    flex-flow: column wrap;
-    justify-content: space-around;
-}
+//     overflow: scroll;
+//     width: 360px;
+//     height: 500px;
+// }
+// .wrap {
+//     display: flex;
+//     box-sizing: border-box;
+//     flex-flow: column wrap;
+//     justify-content: space-around;
+// }

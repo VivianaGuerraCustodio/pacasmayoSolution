@@ -12,6 +12,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NewBoxesComponent } from './components/new-boxes/new-boxes.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     HomeComponent,
     RegisterComponent,
     PageNotFoundComponent,
+    NewBoxesComponent,
   ],
   imports: [
     BrowserModule,
