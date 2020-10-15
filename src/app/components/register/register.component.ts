@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SavingService } from '../../services/saving.service';
 import { HomeComponent } from '../home/home.component';
 import { routes } from '../../app-routing.module'
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  constructor(public firestoreService: SavingService) { }
+  constructor(public firestoreService: SavingService, private rutaActiva: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +28,7 @@ export class RegisterComponent implements OnInit {
     document.querySelector('.formTwo').classList.add('hide')
   }
   saveNewUser() {
-
+    this.rutaActiva.snapshot.paramMap.get("home")
     /*
     routes.forEach({
       path: "HomeComponent"
