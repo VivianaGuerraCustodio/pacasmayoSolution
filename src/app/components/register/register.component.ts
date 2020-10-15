@@ -28,18 +28,14 @@ export class RegisterComponent implements OnInit {
     document.querySelector('.formTwo').classList.add('hide')
   }
   saveNewUser() {
-    this.rutaActiva.snapshot.paramMap.get("home")
-    /*
-    routes.forEach({
-      path: "HomeComponent"
-    })
+
     this.firestoreService.newRegister(this.titularNombre, this.titularApellido, this.titularDNI, this.titularTelefono).then(() => {
       this.titularNombre = '';
       this.titularApellido = '';
       this.titularDNI = '';
       this.titularTelefono = '';
-      
-    })*/
+
+    })
 
   }
 

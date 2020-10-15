@@ -5,18 +5,19 @@
             <img src="assets/family/familyInLivingRoom.png" alt="">
             <div>
                 <p>¿Cuál es tu nombre?</p>
-                <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Perez Lopez"
-                    name="" id="">
+                <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Roberto" name=""
+                    id="" required>
                 <p>¿Cuál es tu apellido?</p>
-                <input class="custom-input-text" [(ngModel)]="titularApellido" type="text" placeholder="Perez Lopez"
-                    name="" id="">
+                <input class="custom-input-text" required [(ngModel)]="titularApellido" type="text"
+                    placeholder="Perez Lopez" name="" id="">
 
             </div>
             <p>Ingresa tu DNI*</p>
-            <input class="custom-input-text" [(ngModel)]="titularDNI" type="number" placeholder="12345678" name=""
-                id="">
+            <input class="custom-input-text" required [(ngModel)]="titularDNI" type="number" placeholder="12345678"
+                name="" id="">
             <p>Ingresa tu numero telefónico</p>
-            <input class="custom-input-text" [(ngModel)]="titularTelefono" type="text" name="" id="">
+            <input class="custom-input-text" required [(ngModel)]="titularTelefono" placeholder="934762000" type="numer"
+                name="" id="">
             <button (click)="nextView()" class="btn-red-principal">Siguiente</button>
         </div>
     </div>
