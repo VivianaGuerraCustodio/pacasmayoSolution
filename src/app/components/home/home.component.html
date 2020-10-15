@@ -1,10 +1,10 @@
 <div class="welcome enphasisSecond ">
-    <div class="formOne">
+    <div class="formWelcome">
         <h1 class="enphasis">¡Bienvenida Familia (nombre)!</h1>
         <div class="level-content">
             <p class="margin">Nivel Ahorrado:</p>
             <div class="star-content">
-                <img src="../../../assets/star.svg" alt="">
+                <img src="../../../assets/starLevel.svg" alt="">
             </div>
         </div>
         <p class="margin">Este mes has ahorrado :</p>
@@ -53,18 +53,15 @@
                         <div class="info-box add-box">
                             <p>Agregar cajita</p>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="report enphasisSecond hide formTwo">
+    <div class="report enphasisSecond hide formDetalleBox">
         <h4 class="enphasis center">Tu cajita</h4>
-        <h2 class="enphasis width-input pad">ALQUILER</h2>
+        <h2 class="enphasis name-box pad">ALQUILER</h2>
         <div class="enphasis">
             <p class="pad">Código para depósito</p>
             <p class="pad codigo">44565444-ALQ1</p>
@@ -85,12 +82,14 @@
             <th>S/. 25.00</th>
             <th>12/10/2020</th>
         </div>
-
     </div>
 
     <div class="new-box hide formAddBox">
-        <h3 class="enphasis">Crea una nueva cajita</h3>
-        <div>
+        <div class="formHeadAddBox">
+            <button>atras</button>
+            <h3 class="enphasis ">Crea una nueva cajita</h3>
+        </div>
+        <div class="formNameBoxNew">
             <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
             <p class="enphasis margin">¿Qué cajita quieres llenar?</p>
             <div class="center">
@@ -116,26 +115,18 @@
                 </div>
             </div>
             <p class="enphasis margin">Si no está, define tu propia cajita:</p>
-            <input type="text" class="width-input margin custom-input-text">
-            <button class="btn-red-c center">Siguiente</button>
+            <input type="text" class="name-box margin custom-input-text">
+            <button class="btn-red-c" (click)="addNameNewBox()">Siguiente</button>
         </div>
-        <div>
+        <div class="hide formMontoBox">
             <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
             <img class="img-box" src="../../../assets/box.svg" alt="">
             <p class="enphasisSecond margin">Para Alquiler</p>
             <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
-            <input type="text" class="width-input margin custom-input-text">
-            <button class="btn-red-c center">Siguiente</button>
+            <input type="text" class="name-box margin custom-input-text">
+            <button class="btn-red-c" (click)="addTotalNewBox()">Siguiente</button>
         </div>
-        <div>
-            <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
-            <img class="img-box" src="../../../assets/box.svg" alt="">
-            <p class="enphasisSecond margin">Para Alquiler</p>
-            <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
-            <input type="text" class="width-input margin custom-input-text">
-            <button class="btn-red-c center">Siguiente</button>
-        </div>
-        <div class="">
+        <div class="hide formFechaLimiteBox">
             <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
             <p class="enphasis margin">Debes llenar tu cajita con:</p>
             <p class="enphasisSecond margin">500</p>
@@ -153,7 +144,18 @@
             </div>
             <p class="enphasisSecond margin">También puedes elegir la fecha que prefieras</p>
             <input type="date">
-            <button class="btn-red-c">Siguiente</button>
+            <button class="btn-red-c" (click)="addDataBoxFirestore()">Siguiente</button>
         </div>
+    </div>
+    <div class="hide formConfimationBox">
+        <div class="star-content">
+            <img class="star" src="../../../assets/star.svg" alt="">
+        </div>
+        <h3>¡Felicidades por tu nueva cajita! </h3>
+        <p>Tú código es:</p>
+        <p>44565444-ALQ1</p>
+        <p>Puedes encontrarlo al revisar el estado de tu cajita.</p>
+        <p>¡Si deposítas 17.80 soles diariamente en tu cajita, conseguirás tu meta en el tiempo establecido! </p>
+        <button class="btn-red-c" (click)="listo()">Listo</button>
     </div>
 </div>
