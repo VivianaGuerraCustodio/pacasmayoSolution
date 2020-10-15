@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NewBoxesComponent } from './components/new-boxes/new-boxes.component';
 import { FirstViewComponent } from './components/first-view/first-view.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { FirstViewComponent } from './components/first-view/first-view.component
     HomeComponent,
     RegisterComponent,
     PageNotFoundComponent,
+    NewBoxesComponent,
     FirstViewComponent,
   ],
   imports: [

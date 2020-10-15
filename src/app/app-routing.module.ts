@@ -15,7 +15,6 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "", component: FirstViewComponent },
   /*{ path: "**", component: PageNotFoundComponent },*/
-
 ];
 
 @NgModule({

@@ -1,6 +1,113 @@
 @import "/src/styles.scss";
-.scroll-horizontal{
-    width:301px;
-    height: 193px;
-    overflow:scroll;
+// .scroll-horizontal{
+//     width:301px;
+//     height: 193px;
+//     overflow:scroll;
+// }
+* {
+  padding: 0;
+  margin: 0;
+}
+.welcome {
+  padding: 15px;
+}
+.pad-margin {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.star-content {
+  // display: flex;
+  margin: 20px 0;
+}
+.total {
+  font-size: 30px;
+  font-weight: bold;
+}
+.boxes-content {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 300px;
+  height: 280px;
+}
+
+.info-box {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  p {
+    color: white;
+  }
+  // align-items: center;
+}
+.num-day {
+  color: #ffffff;
+}
+.info-color-box {
+  background-color: $colorprimario2;
+}
+.add-box {
+  background-color: $sombra;
+  display: flex;
+  align-items: center;
+  
+  border:4px dashed $gris;
+  p{
+    color:$gris;
+  }
+}
+
+.icon-alarma {
+  width: 30px;
+  height: 30px;
+}
+
+// ESTILOS DE LA OTRA VISTA
+.report {
+  padding: 15px;
+}
+.pad {
+  padding: 10px 0;
+}
+.codigo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.item-deposito {
+  background-color: pink;
+  display: flex;
+  justify-content: space-around;
+  height: 20px;
+  padding: 10px;
+}
+th {
+  font-size: 20px;
+}
+.box-content {
+  p {
+    font-weight: bold;
+    padding: 4px;
+  }
+  progress {
+    background-color: #f3f3f3;
+    border: 1px;
+    height: 18px;
+    width: 60px;
+    border-radius: 9px;
+  
+  }
+  progress::-webkit-progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  progress::-webkit-progress-value {
+    background: $colorsecundario2;
+    border-radius: 9px;
+  }
+  
 }

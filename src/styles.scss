@@ -2,10 +2,13 @@
 $colorprimario: #fe4a49;
 $colorprimario2: #2ab7ca;
 $colorsecundario: #fed766;
+$colorsecundario2:#A4F490;
+$sombra : #E6E6EA;
+$gris: #828282;
 * {
     font-family: roboto, sans-serif;
     scroll-behavior: smooth;
-    outline:none
+    outline:none;
 }
 @mixin width-height($width, $height) {
     width: $width;
@@ -49,22 +52,17 @@ $colorsecundario: #fed766;
     border: 3px solid $colorprimario2;
     border-radius: 7px;
 }
-.box-content {
-    border-radius: 7px;
-    width: 180px;
-    height: 100px;
-    display:flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    background-color: $colorprimario2;
-    margin: 7px;
-}
-.scroll-horizontal {
-    
-    overflow: scroll;
-    width: 360px;
-    height: 500px;
-}
+// .box-content {
+//     border-radius: 7px;
+//     width: 180px;
+//     height: 100px;
+//     display:flex;
+//     flex-direction: row;
+//     box-sizing: border-box;
+//     background-color: $colorprimario2;
+//     margin: 7px;
+// }
+
 .wrap {
     display: flex;
     box-sizing: border-box;
@@ -74,3 +72,14 @@ $colorsecundario: #fed766;
 .hide{
     display: none;
 }
+
+//     overflow: scroll;
+//     width: 360px;
+//     height: 500px;
+// }
+// .wrap {
+//     display: flex;
+//     box-sizing: border-box;
+//     flex-flow: column wrap;
+//     justify-content: space-around;
+// }
