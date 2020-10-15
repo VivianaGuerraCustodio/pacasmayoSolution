@@ -15,7 +15,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NewBoxesComponent } from './components/new-boxes/new-boxes.component';
 import { FirstViewComponent } from './components/first-view/first-view.component';
-import { LoginComponent } from './components/login/login.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { LoginComponent } from './components/login/login.component';
     PageNotFoundComponent,
     NewBoxesComponent,
     FirstViewComponent,
-    LoginComponent,
+    SignInComponent,
   ],
   imports: [
     BrowserModule,

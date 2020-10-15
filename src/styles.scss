@@ -51,6 +51,14 @@ body {
     color: $colorprimario;
     border-radius: 2.4em;
 }
+.btn-red-c {
+    @include width-height(80%, 38px);
+    background-color: $colorprimario;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    // margin: 1.1em;
+}
 .custom-input-text {
     justify-content: center;
     height: 30px;
@@ -76,14 +84,6 @@ body {
 .hide{
     display: none;
 }
-
-//     overflow: scroll;
-//     width: 360px;
-//     height: 500px;
-// }
-// .wrap {
-//     display: flex;
-//     box-sizing: border-box;
-//     flex-flow: column wrap;
-//     justify-content: space-around;
-// }
+.width-input {
+    width: 100%;
+}

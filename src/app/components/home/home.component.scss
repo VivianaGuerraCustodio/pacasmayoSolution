@@ -112,18 +112,14 @@ th {
   // padding-top: 50%;
 }*/
 
-.name-box {
-  width: 100%;
-}
-
-.btn-red-principal2 {
-  @include width-height(100%, 35px);
-  background-color: $colorprimario;
-  border: none;
-  color: white;
-  border-radius: 0.4em;
-  // margin: 1.1em;
-}
+// .btn-red-principal2 {
+//   @include width-height(100%, 35px);
+//   background-color: $colorprimario;
+//   border: none;
+//   color: white;
+//   border-radius: 0.4em;
+//   // margin: 1.1em;
+// }
 
 .img-box{
   display: flex;
@@ -147,14 +143,6 @@ th {
 }
 .btn-mes {
   @include width-height(30%, 30px);  
-}
-.btn-gray-principal2 {
-  @include width-height(100%, 35px);
-  background-color: gray;
-  border: none;
-  color: white;
-  border-radius: 0.4em;
-  // margin: 1.1em;
 }
 
 .box-content {
