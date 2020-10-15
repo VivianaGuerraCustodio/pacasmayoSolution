@@ -5,16 +5,16 @@ import { RegisterComponent } from '../app/components/register/register.component
 import { LandingComponent } from './components/landing/landing.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AppComponent } from './app.component';
+import { FirstViewComponent } from './components/first-view/first-view.component'
 
 
 const routes: Routes = [
-  /*{ path:"inicio",component: AppComponent},*/
-  { path: "register",component: RegisterComponent},
+  // { path: "inicio", component: FirstViewComponent },
+  { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "landing", component: LandingComponent },
-  /*{ path: "", redirectTo: "home", pathMatch: 'full' },*/
+  { path: "", component: FirstViewComponent },
   /*{ path: "**", component: PageNotFoundComponent },*/
-
 ];
 
 @NgModule({

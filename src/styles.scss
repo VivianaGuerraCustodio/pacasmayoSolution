@@ -5,7 +5,7 @@ $colorsecundario: #fed766;
 * {
     font-family: roboto, sans-serif;
     scroll-behavior: smooth;
-    outline:none
+    outline:none;
 }
 @mixin width-height($width, $height) {
     width: $width;
