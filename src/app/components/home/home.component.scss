@@ -25,53 +25,45 @@
   font-weight: bold;
 }
 .boxes-content {
-    display: flex;
-    background-color: red;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 300px;
+  height: 280px;
 }
-.box-content {
-  margin: 5px;
-  width: 27%;
-  // height: ;
-  background-color: yellow;
-  
-  // align-content: center;
-}
+
 .info-box {
-  
-  // width: 5rem;
-  height: 75%;
-  // @include width-height(95%, 6.3rem);
+  width: 90px;
+  height: 90px;
   border-radius: 10px;
   text-align: center;
   padding-top: 10px;
+  p {
+    color: white;
+  }
   // align-items: center;
 }
 .num-day {
   color: #ffffff;
 }
 .info-color-box {
-  background-color: blue;
+  background-color: $colorprimario2;
 }
 .add-box {
-  background-color: gray;
-}
-
-// progress[value] {
-//   display: flex;
-//   width: 90%;
-//   height: 30px;
-// }
-.progress-bar1 {
-  width: 90%;
-  height: 30px;
+  background-color: $sombra;
+  display: flex;
+  align-items: center;
+  
+  border:4px dashed $gris;
+  p{
+    color:$gris;
+  }
 }
 
 .icon-alarma {
-  width: 60%;
-  height: 45%;
+  width: 30px;
+  height: 30px;
 }
 
 // ESTILOS DE LA OTRA VISTA
@@ -94,6 +86,7 @@
   width: 100%;
   height: 60px;
 }
+
 .item-deposito {
   background-color: pink;
   display: flex;
@@ -165,4 +158,28 @@ th {
   color: white;
   border-radius: 0.4em;
   // margin: 1.1em;
+}
+
+.box-content {
+  p {
+    font-weight: bold;
+    padding: 4px;
+  }
+  progress {
+    background-color: #f3f3f3;
+    border: 1px;
+    height: 18px;
+    width: 60px;
+    border-radius: 9px;
+  
+  }
+  progress::-webkit-progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 9px;
+  }
+  progress::-webkit-progress-value {
+    background: $colorsecundario2;
+    border-radius: 9px;
+  }
+  
 }

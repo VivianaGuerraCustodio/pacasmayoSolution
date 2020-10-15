@@ -2,6 +2,9 @@
 $colorprimario: #fe4a49;
 $colorprimario2: #2ab7ca;
 $colorsecundario: #fed766;
+$colorsecundario2:#A4F490;
+$sombra : #E6E6EA;
+$gris: #828282;
 * {
     font-family: roboto, sans-serif;
     scroll-behavior: smooth;
@@ -64,11 +67,6 @@ body {
 //     background-color: $colorprimario2;
 //     margin: 7px;
 // }
-.scroll-horizontal {
-    overflow: scroll;
-    width: 360px;
-    height: 500px;
-}
 .wrap {
     display: flex;
     box-sizing: border-box;
@@ -78,3 +76,14 @@ body {
 .hide{
     display: none;
 }
+
+//     overflow: scroll;
+//     width: 360px;
+//     height: 500px;
+// }
+// .wrap {
+//     display: flex;
+//     box-sizing: border-box;
+//     flex-flow: column wrap;
+//     justify-content: space-around;
+// }
