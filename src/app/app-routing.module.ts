@@ -4,11 +4,10 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from '../app/components/register/register.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { AppComponent } from './app.component';
 import { FirstViewComponent } from './components/first-view/first-view.component'
 
 
-const routes: Routes = [
+export const routes: Routes = [
   
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
@@ -25,4 +24,5 @@ export class AppRoutingModule {
 
 
 }
+
 export const routing = RouterModule.forRoot(routes);
