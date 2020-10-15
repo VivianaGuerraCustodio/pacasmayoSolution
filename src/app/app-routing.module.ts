@@ -8,8 +8,7 @@ import { AppComponent } from './app.component';
 import { FirstViewComponent } from './components/first-view/first-view.component'
 
 
-const routes: Routes = [
-  // { path: "inicio", component: FirstViewComponent },
+const routes: Routes = [  
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "landing", component: LandingComponent },

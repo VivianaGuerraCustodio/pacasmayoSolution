@@ -59,15 +59,17 @@ $colorsecundario: #fed766;
 //     background-color: $colorprimario2;
 //     margin: 7px;
 // }
-// .scroll-horizontal {
-    
-//     overflow: scroll;
-//     width: 360px;
-//     height: 500px;
-// }
-// .wrap {
-//     display: flex;
-//     box-sizing: border-box;
-//     flex-flow: column wrap;
-//     justify-content: space-around;
-// }
+.scroll-horizontal {
+    overflow: scroll;
+    width: 360px;
+    height: 500px;
+}
+.wrap {
+    display: flex;
+    box-sizing: border-box;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+.hide{
+    display: none;
+}
