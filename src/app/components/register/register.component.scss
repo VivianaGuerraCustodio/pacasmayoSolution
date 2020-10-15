@@ -3,7 +3,7 @@
 .column {
     @include display-flex-direction(flex, column);
     justify-content: space-between;
-    
+    width: 50%;
 }
 
 .row {
@@ -16,4 +16,8 @@
     input[type="text"], input[type="number"]{
         margin:4px;
     }
+}
+
+.formTwo {
+    width: 95%;
 }

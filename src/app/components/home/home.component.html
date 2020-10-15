@@ -1,21 +1,21 @@
-<div class="welcome enphasisSecond">
+<div class="welcome enphasisSecond formOne">
     <h1 class="enphasis">¡Bienvenida Familia (nombre)!</h1>
     <div class="level-content">
-        <p class="pad-margin">Nivel Ahorrado:</p>
+        <p class="margin">Nivel Ahorrado:</p>
         <div class="star-content">
-            *****
+            <img src="../../../assets/star.svg" alt="">
         </div>        
     </div>
-    <p class="pad-margin">Este mes has ahorrado :</p>
-    <p class="total enphasis pad-margin">S./ 430.00</p>
+    <p class="margin">Este mes has ahorrado :</p>
+    <p class="total enphasis margin">S./ 430.00</p>
     
     <div class="boxes-content">
-        <div class="box-content">
+        <div class="box-content" (click)="nextView()">
             <div class="info-box info-color-box">
                 <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                 <p class="num-day">5 días</p>
                 <!-- <label for="file">Downloading progress:</label> -->
-                <progress id="file" value="50" max="100"> 32% </progress>    
+                <progress class="progress-bar1" id="file" value="50" max="100"> 32% </progress>    
             </div>
             <p>ALQUILER</p>
         </div>
@@ -24,7 +24,7 @@
                 <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                 <p>5 días</p>
                 <!-- <label for="file">Downloading progress:</label> -->
-                <progress id="file" value="50" max="100"> 32% </progress>    
+                <progress class="progress-bar1" id="file" value="50" max="100"> 32% </progress>    
             </div>
             <p>ALQUILER</p>
         </div>
@@ -33,7 +33,7 @@
                 <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                 <p>5 días</p>
                 <!-- <label for="file">Downloading progress:</label> -->
-                <progress id="file" value="50" max="100"> 32% </progress>    
+                <progress class="progress-bar1" id="file" value="50" max="100"> 32% </progress>    
             </div>
             <p>ALQUILER</p>
         </div>
@@ -42,11 +42,11 @@
                 <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                 <p>5 días</p>
                 <!-- <label for="file">Downloading progress:</label> -->
-                <progress id="file" value="50" max="100"> 32% </progress>    
+                <progress class="progress-bar1" id="file" value="50" max="100"> 32% </progress>    
             </div>
             <p>ALQUILER</p>
         </div>        
-        <div class="box-content">
+        <div class="box-content" (click)="addNewBox()">
             <div class="info-box add-box">
                 <p>AGREGAR CAJITA</p>
             </div>
@@ -54,7 +54,7 @@
     </div>
 </div>
 
-<div class="report enphasisSecond">
+<div class="report enphasisSecond hide formTwo">
     <h4 class="enphasis center">Tu cajita</h4>
     <h2 class="enphasis name-box pad">ALQUILER</h2>
     <div class="enphasis">
@@ -63,7 +63,7 @@
     </div>
     <p>¡Estás a 2 semanas de cumplir tu meta!</p>
     <!-- <label for="file">Downloading progress:</label> -->
-    <progress id="file" value="50" max="100"> 32% </progress>    
+    <progress class="progress-bar2" id="file" value="50" max="100"> 32% </progress>    
     <h1 class="enphasis">Tus depósitos</h1>
     <div class="item-deposito">
         <th>S/. 25.00</th>
@@ -79,3 +79,73 @@
     </div>
     
 </div>
+
+<div class="new-box hide formAddBox">
+    <h3 class="enphasis">Crea una nueva cajita</h3>
+    <div>
+        <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+        <p class="enphasis margin">¿Qué cajita quieres llenar?</p>
+        <div class="boxes-content">
+            <div class="box-new">
+                ALQUILER
+            </div>
+            <div class="box-new">
+                ALQUILER
+            </div>
+            <div class="box-new">
+                ALQUILER
+            </div>
+            <div class="box-new">
+                ALQUILER
+            </div>
+            <div class="box-new">
+                ALQUILER
+            </div>
+            <div class="box-new">
+                ALQUILER
+            </div>
+        </div>
+        <p class="enphasis margin">Si no está, define tu propia cajita:</p>
+        <input type="text" class="name-box margin custom-input-text">
+        <button class="btn-red-principal2">Siguiente</button>
+    </div>
+    <div>
+        <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+        <img class="img-box" src="../../../assets/box.svg" alt="">
+        <p class="enphasisSecond margin">Para Alquiler</p>
+        <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
+        <input type="text" class="name-box margin custom-input-text">
+        <button class="btn-red-principal2">Siguiente</button>
+    </div>
+    <div>
+        <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+        <img class="img-box" src="../../../assets/box.svg" alt="">
+        <p class="enphasisSecond margin">Para Alquiler</p>
+        <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
+        <input type="text" class="name-box margin custom-input-text">
+        <button class="btn-red-principal2">Siguiente</button>
+    </div>
+    <div>
+        <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+        <p class="enphasis margin">Debes llenar tu cajita con:</p>
+        <p class="enphasisSecond margin">500</p>
+        <p class="enphasis margin">¿Cuando lo necesitas?</p>
+        <p class="enphasisSecond margin">En días</p>
+        <div class="content-fechaEnd">
+            <button class="btn2 btn-dias">7</button>
+            <button class="btn2 btn-dias">15</button>
+        </div>
+        <p class="enphasisSecond margin">En meses</p>
+        <div class="content-fechaEnd">
+            <button class="btn2 btn-mes">1</button>
+            <button class="btn2 btn-mes">3</button>
+            <button class="btn2 btn-mes">6</button>
+        </div>
+        <p class="enphasisSecond margin">También puedes elegir la fecha que prefieras</p>
+        <input type="date">
+        <button class="btn-gray-principal2">Siguiente</button>
+        <button class="btn-red-principal2">Siguiente</button>
+    </div>
+</div>
+
+

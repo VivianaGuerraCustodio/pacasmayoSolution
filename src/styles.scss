@@ -7,6 +7,11 @@ $colorsecundario: #fed766;
     scroll-behavior: smooth;
     outline:none;
 }
+// PROBANDO
+body {
+    margin: 25px;
+}
+// *****
 @mixin width-height($width, $height) {
     width: $width;
     height: $height;

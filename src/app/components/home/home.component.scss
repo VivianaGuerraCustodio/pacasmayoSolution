@@ -9,9 +9,9 @@
   margin: 0;
 }
 .welcome {
-  padding: 15px;
+  // margin: 20px 15px 20px;
 }
-.pad-margin {
+.margin {
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -59,8 +59,12 @@
   background-color: gray;
 }
 
-progress[value] {
-  display: flex;
+// progress[value] {
+//   display: flex;
+//   width: 90%;
+//   height: 30px;
+// }
+.progress-bar1 {
   width: 90%;
   height: 30px;
 }
@@ -86,6 +90,10 @@ progress[value] {
 //   width: 90%;
 //   height: 30px;
 // }
+.progress-bar2 {
+  width: 100%;
+  height: 60px;
+}
 .item-deposito {
   background-color: pink;
   display: flex;
@@ -95,4 +103,66 @@ progress[value] {
 }
 th {
   font-size: 20px;
+}
+
+// NEW BOX
+.img-paso1 {
+  width: 95%;
+  height: 70%;
+  margin: 15px 0;
+}
+
+.box-new{
+  margin: 5px;
+  width: 27%;
+  height: 100px;
+  background-color: yellow;
+  border-radius: 10px;
+  text-align: center;
+  // padding-top: 50%;
+}
+
+.name-box {
+  width: 100%;
+}
+
+.btn-red-principal2 {
+  @include width-height(100%, 35px);
+  background-color: $colorprimario;
+  border: none;
+  color: white;
+  border-radius: 0.4em;
+  // margin: 1.1em;
+}
+
+.img-box{
+  display: flex;
+  justify-content: center;
+}
+
+// SIGUIENTE VISTA
+.content-fechaEnd {
+  display: flex;
+  justify-content: space-around;
+  // margin: 0 10px;
+}
+.btn2 {
+  background-color: $colorprimario2;
+  border: none;
+  color: white;
+  border-radius: 0.4em;
+}
+.btn-dias {
+  @include width-height(47%, 30px);  
+}
+.btn-mes {
+  @include width-height(30%, 30px);  
+}
+.btn-gray-principal2 {
+  @include width-height(100%, 35px);
+  background-color: gray;
+  border: none;
+  color: white;
+  border-radius: 0.4em;
+  // margin: 1.1em;
 }
