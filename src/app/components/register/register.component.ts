@@ -46,7 +46,14 @@ export class RegisterComponent implements OnInit {
   titularApellido = '';
   titularDNI = '';
   titularTelefono = '';
-
+ nextView(){
+   document.querySelector('.formOne').classList.add('hide')
+   document.querySelector('.formTwo').classList.remove('hide')  
+ }
+ lastNext(){
+   document.querySelector('.formThree').classList.remove('hide')
+   document.querySelector('.formTwo').classList.add('hide') 
+ }
   saveNewUser() {
     this.firestoreService.newRegister(this.titularNombre, this.titularApellido, this.titularDNI, this.titularTelefono).then(() => {
       this.titularNombre = '';

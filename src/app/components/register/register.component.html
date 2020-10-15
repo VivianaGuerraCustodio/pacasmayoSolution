@@ -1,24 +1,30 @@
-<div class="center container-register">
-    <p class="enphasis">Yunta es tu aliado en el camino a <br> cumplir tus metas</p>
-    <div class="enphasisSecond center">
-        <div>
-            <p>¿Cuál es tu nombre?</p>
-            <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Perez Lopez" name=""
-                id="">
-            <p>¿Cuál es tu apellido?</p>
-            <input class="custom-input-text" [(ngModel)]="titularApellido" type="text" placeholder="Perez Lopez" name=""
-                id="">
+<div class=" center container-register">
+    <div class="formOne">
+        <p class="enphasis">Yunta es tu aliado en el camino a <br> cumplir tus metas</p>
+        <div class="enphasisSecond center">
+            <img src="assets/family/familyInLivingRoom.png" alt="">
+            <div>
+                <p>¿Cuál es tu nombre?</p>
+                <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Perez Lopez"
+                    name="" id="">
+                <p>¿Cuál es tu apellido?</p>
+                <input class="custom-input-text" [(ngModel)]="titularApellido" type="text" placeholder="Perez Lopez"
+                    name="" id="">
 
+            </div>
+            <p>Ingresa tu DNI*</p>
+            <input class="custom-input-text" [(ngModel)]="titularDNI" type="number" placeholder="12345678" name=""
+                id="">
+            <p>Ingresa tu numero telefónico</p>
+            <input class="custom-input-text" [(ngModel)]="titularTelefono" type="text" name="" id="">
+            <button (click)="nextView()" class="btn-red-principal">Siguiente</button>
         </div>
-        <p>Ingresa tu DNI*</p>
-        <input class="custom-input-text" [(ngModel)]="titularDNI" type="number" placeholder="12345678" name="" id="">
-        <p>Ingresa tu numero telefónico</p>
-        <input class="custom-input-text" [(ngModel)]="titularTelefono" type="text" name="" id="">
     </div>
-    <button (click)="saveNewUser()" class="btn-red-principal">Siguiente</button>
 
-    <div>
-        <p class="enphasis">Planifica un futuro mejor para tu familia un paso a la vez</p>
+    <div class="hide formTwo">
+        <p class="enphasis">Planifica un futuro mejor para tu <br>familia un paso a la vez</p>
+        <img src="assets/family/familyInPark.png" alt="">
+        <p class="enphasis">Agregar Integrantes</p>
         <div class="row">
             <div class="column">
                 <p>Nombre completo</p>
@@ -37,17 +43,21 @@
         </div>
         <div>
             <button class="btn-outline-red">Omitir</button>
-            <button class="btn-red-principal">Siguiente</button>
+            <button (click)="lastNext()" class="btn-red-principal">Siguiente</button>
         </div>
     </div>
-    <div class="enphasisSecond">
-        <p>Crea tu contraseña</p>
-        <input class="custom-input-text" type="text" name="" id="">
-        <p>Escribe tu contraseña</p>
-        <input class="custom-input-text" type="text" name="" id="">
-        <p>Confirma tu contraseña</p>
-        <input class="custom-input-text" type="text" name="" id="">
+    <div class="hide formThree">
+        <div class="column center  enphasisSecond">
+            <p class="enphasis">Te incentiva , y te da el <br> empujoncito que necesitas</p>
+            <img src="assets/family/twoGuys.png" alt="">
+            <p class="enphasis">Crea tu contraseña</p>
+            <input class="custom-input-text" type="text" name="" id="">
+            <p>Escribe tu contraseña</p>
+            <input class="custom-input-text" type="text" name="" id="">
+            <p>Confirma tu contraseña</p>
+            <input class="custom-input-text" type="text" name="" id="">
+            <button (click)="saveNewUser()" class="btn-red-principal">Registrar</button>
+        </div>
     </div>
-    <button class="btn-red-principal">Registrar</button>
 
 </div>
