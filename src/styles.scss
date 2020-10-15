@@ -10,6 +10,11 @@ $gris: #828282;
     scroll-behavior: smooth;
     outline:none;
 }
+// PROBANDO
+body {
+    margin: 25px;
+}
+// *****
 @mixin width-height($width, $height) {
     width: $width;
     height: $height;
@@ -62,7 +67,6 @@ $gris: #828282;
 //     background-color: $colorprimario2;
 //     margin: 7px;
 // }
-
 .wrap {
     display: flex;
     box-sizing: border-box;

@@ -13,7 +13,7 @@ export const routes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: FirstViewComponent },
-  /*{ path: "**", component: PageNotFoundComponent },*/
+  // { path: "**", component: PageNotFoundComponent },
 ];
 
 @NgModule({
