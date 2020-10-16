@@ -1,5 +1,13 @@
 @import "/src/styles.scss";
 
+.omit {
+    @include width-height(80%, 38px);
+    background-color: transparent;
+    border: 1px solid $colorprimario;
+    color: $colorprimario;
+    border-radius: 2.4em;
+    // margin: 1.1em;
+}
 
 .formTwo {
     width: 95%;
