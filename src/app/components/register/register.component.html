@@ -1,31 +1,37 @@
-<div class=" center container-register">
+<div class="container-register">
     <div class="formOne">
-        <p class="enphasis">Yunta es tu aliado en el camino a <br> cumplir tus metas</p>
-        <div class="enphasisSecond center">
-            <img src="assets/family/familyInLivingRoom.png" alt="">
-            <div>
+        <div class="center register-portada">
+            <p class="enphasis e-title center">Ayu es tu aliado en el camino a cumplir tus metas</p>
+            <img class="portada-img" src="assets/family/familyInLivingRoom.png" alt="">
+        </div>
+        <div class="enphasisSecond">            
+            <div class="margin2">
                 <p>¿Cuál es tu nombre?</p>
-                <input class="custom-input-text" [(ngModel)]="titularNombre" type="text" placeholder="Roberto" name=""
+                <input class="custom-input-text width-input" [(ngModel)]="titularNombre" type="text" placeholder="Roberto" name=""
                     id="" required>
                 <p>¿Cuál es tu apellido?</p>
-                <input class="custom-input-text" required [(ngModel)]="titularApellido" type="text"
-                    placeholder="Perez Lopez" name="" id="">
-
+                <input class="custom-input-text width-input" required [(ngModel)]="titularApellido" type="text"
+                    placeholder="Perez Lopez" name="" id="">            
+                <p>Ingresa tu DNI*</p>
+                <input class="custom-input-text width-input" required [(ngModel)]="titularDNI" type="number" placeholder="12345678"
+                    name="" id="">
+                <p>Ingresa tu numero telefónico</p>
+                <input class="custom-input-text width-input" required [(ngModel)]="titularTelefono" placeholder="934762000" type="numer"
+                    name="" id="">
             </div>
-            <p>Ingresa tu DNI*</p>
-            <input class="custom-input-text" required [(ngModel)]="titularDNI" type="number" placeholder="12345678"
-                name="" id="">
-            <p>Ingresa tu numero telefónico</p>
-            <input class="custom-input-text" required [(ngModel)]="titularTelefono" placeholder="934762000" type="numer"
-                name="" id="">
-            <button (click)="nextView()" class="btn-red-c">Siguiente</button>
+            <div class="center margin2">
+                <button (click)="nextView()" class="btn-red-c margin">Siguiente</button>
+            </div>
+            
         </div>
     </div>
 
     <div class="hide formTwo">
-        <p class="enphasis">Planifica un futuro mejor para tu <br>familia un paso a la vez</p>
-        <img src="assets/family/familyInPark.png" alt="">
-        <p class="enphasis">Agregar Integrantes</p>
+        <div class="center register-portada">
+            <p class="enphasis e-title center">Planifica un futuro mejor para tu familia un paso a la vez</p>
+            <img class="portada-img" src="assets/family/familyInPark.png" alt="">
+        </div>
+        <p class="enphasis">Agrega a tu núcleo familiar:</p>
         <div class="row">
             <div class="column">
                 <p>Nombre completo</p>
@@ -48,16 +54,19 @@
         </div>
     </div>
     <div class="hide formThree">
-        <div class="column center  enphasisSecond">
-            <p class="enphasis">Te incentiva , y te da el <br> empujoncito que necesitas</p>
-            <img src="assets/family/twoGuys.png" alt="">
-            <p class="enphasis">Crea tu contraseña</p>
-            <input class="custom-input-text" type="text" name="" id="">
+        <div class="center register-portada">
+            <p class="enphasis e-title center">Te incentiva , y te da el empujoncito que necesitas</p>
+            <img class="portada-img" src="assets/family/twoGuys.png" alt="">
+        </div>
+        <div class="enphasisSecond margin2">
+            <p class="enphasis e-title">Crea tu contraseña</p>
+            <input class="custom-input-text width-input" type="text" name="" id="">
             <p>Escribe tu contraseña</p>
-            <input class="custom-input-text" type="text" name="" id="">
+            <input class="custom-input-text width-input" type="text" name="" id="">
             <p>Confirma tu contraseña</p>
-            <input class="custom-input-text" type="text" name="" id="">
-            <button (click)="saveNewUser()" class="btn-red-c">Registrar</button>
+            <div class="center">
+                <button (click)="saveNewUser()" class="btn-red-c margin">Registrar</button>
+            </div>
         </div>
     </div>
 </div>
