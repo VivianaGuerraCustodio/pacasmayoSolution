@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,49 +8,49 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
-  nextView(){
+  alquiler: string;
+  nameOfBox = "";
+  newName = ""
+  nextView() {
     document.querySelector('.formWelcome').classList.add('hide');
     document.querySelector('.formDetalleBox').classList.remove('hide');
   }
-  hide(){
+  hide() {
     document.querySelector('.modal-bg').classList.add('hide');
   }
+
+  boxAlquiler() {
+    this.alquiler = 'alquiler';
+    console.log(this.alquiler);
+  }
+
   // AÑADIR CAJITA NUEVA
-  addNewBox(){
+  addNewBox() {
     document.querySelector('.formWelcome').classList.add('hide')
     document.querySelector('.formAddBox').classList.remove('hide')
   }
-  addNameNewBox(){
+  addNameNewBox() {
     document.querySelector('.formNameBoxNew').classList.add('hide')
     document.querySelector('.formMontoBox').classList.remove('hide')
+    this.newName = this.nameOfBox
+    console.log(this.newName);
   }
-  addTotalNewBox(){
+  addTotalNewBox() {
     document.querySelector('.formMontoBox').classList.add('hide')
     document.querySelector('.formFechaLimiteBox').classList.remove('hide')
   }
-  addDataBoxFirestore(){
+  addDataBoxFirestore() {
     document.querySelector('.formFechaLimiteBox').classList.add('hide')
     document.querySelector('.formHeadAddBox').classList.add('hide')
     document.querySelector('.formConfimationBox').classList.remove('hide')
   }
-  listo(){
-    document.querySelector('.formConfimationBox').classList.add('hide')
+  listo() {
     document.querySelector('.formWelcome').classList.remove('hide')
-    // document.querySelector('.formAddBox').classList.remove('hide')
+    
   }
 
-  // const functionDisplay = (id) => {
-  //   if (document.getElementById){ //se obtiene el id
-  //   var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
-  //   el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
-  //   }
-  // };
-  // window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
-  //   muestra_oculta('contenido');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
-  //   }
 }
