@@ -188,3 +188,13 @@ progress::-webkit-progress-value {
     width: 200px;
   }
 }
+.welcome {
+  background-image: url("/assets/semicircle.png");
+  background-repeat: no-repeat;
+}
+.user {
+  width: 20%;
+  height: 20%;
+  margin: 15px;
+  border-radius: 110px;
+}
