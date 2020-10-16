@@ -1,3 +1,4 @@
+/* eslint-disable promise/always-return */
 // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -31,7 +32,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   function welcome(agent) {
     agent.add(`¡Hola!
 ¡En Pacasmayo queremos que cumplas tus sueños! 😊
-¿Deseas crear una cuenta? o ¿Deseas hacer una consulta?`);
+¿Deseas crear una cuenta? o ¿Deseas entrar a tu cuenta?`);
   }
  
   function fallback(agent) {
@@ -39,41 +40,88 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     agent.add(`¿Puedes repetirlo por favor?`);
   }
   
-  function getNameHandler(agent) {
+  function addUser(agent) {
     let DNI = parseFloat(agent.parameters.DNI);
     let nombre = agent.parameters.nombre;
     let apellido = agent.parameters.apellido;
 
+    const docPersonalizado = DNI.toString();
+
     agent.add(`Se creó una nueva cuenta con los siguiente datos: DNI: ${DNI} Nombre completo: ${nombre} ${apellido}`);
 
-    return db.collection('familias').add({ 
+    return db.collection('familias').doc(docPersonalizado).set({ 
         DNI: DNI,
         nombre: nombre,
         apellido: apellido
-     });
+    });
   }
 
-  function getEachInfo(agent) {
+  function getInfo(agent) {
     let DNI = parseFloat(agent.parameters.DNI);
-    try {
-      db.collection('familias').where('DNI', '==', DNI)
-      .onSnapshot((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          const users = [];
-          users.push(doc.data().nombre);
-        });
-        agent.add(`Tu nombre es ${users.join('')}`);
+    const docPersonalizado = DNI.toString();
+
+    const docRef = db.collection('familias').doc(docPersonalizado)
+    return docRef.get()
+      .then(snap => {
+        if(snap.exists) {
+          const data = snap.data();
+          const nombre = data.nombre;
+          const apellido = data.apellido;
+          agent.add(`Estás registrado como ${nombre} ${apellido}. Si desea escribir una meta, escriba Crear. Si desea ver su lista de metas, escriba Lista`);
+          return console.log('Done!')
+        } else {
+          agent.add('Tu nombre no está registrado. Para crear una cuenta, escriba Inicio');
+          return console.log('Done!')
+        }
       })
-    } catch(err){
-      agent.add(`Existe algún ${err}`)
-    }
   }
-  
+
+  function crearMeta(agent) {
+    let DNI = parseFloat(agent.parameters.DNI);
+    let meta = agent.parameters.meta;
+    let monto = parseFloat(agent.parameters.monto);
+    let tiempo = agent.parameters.dateTime;
+
+    const newMeta = meta.join(' ');
+    const tresDig = newMeta.slice(0,3);
+
+    agent.add(`Tu meta se ha registrado con el número de DNI: ${DNI} . Tu nueva meta es ${newMeta}, el monto asignado es ${monto} y el tiempo para cumplir esta meta es ${tiempo}.`);
+
+    return db.collection('metas').add({
+        id_user: DNI,
+        meta: newMeta,
+        monto: monto,
+        tiempo: tiempo,
+        código: `${DNI}-${tresDig}`
+    });
+  }
+
+  function mostrarLista(agent) {
+    let DNI = parseFloat(agent.parameters.DNI);
+    
+    return db.collection('metas')
+      .where('id_user', '==', DNI)
+      .get()
+      .then((snap) => {
+        if(!snap.size === 0){
+          agent.add('No hay metas registradas')
+        } else if (snap.size > 0) {
+          const arr = [];
+          snap.forEach((doc) => {
+            arr.push(`${doc.data().meta}`)
+          })
+          agent.add(`${arr.join('\n')}`);
+        }
+      })
+  }
+
   // Run the proper function handler based on the matched Dialogflow intent name
   let intentMap = new Map();
   intentMap.set('Default Welcome Intent', welcome);
   intentMap.set('Default Fallback Intent', fallback);
-  intentMap.set('ingresar datos importantes', getNameHandler);
-  intentMap.set('Ingresa DNI', getEachInfo);
+  intentMap.set('ingresar datos importantes', addUser);
+  intentMap.set('Ingresa DNI', getInfo);
+  intentMap.set('Datos para crear meta', crearMeta);
+  intentMap.set('Lista de todas las metas', mostrarLista);
   agent.handleRequest(intentMap);
 });
