@@ -18,10 +18,30 @@
         </div>
         <p class="margin center">Este mes has ahorrado :</p>
         <p class="total enphasis center margin">S./ 430.00</p>
-
+        <div class="media" *ngFor="let meta for metas">            
+                <!-- <p>{{meta.tiempo}}</p>                                
+                               
+                <progress id="file" value="50" max="100"> 32% </progress>
+                <p>{{meta.código}}</p>  -->
+                <!-- <p>{{meta.meta}}</p>  -->
+            <p>meta: {{meta.monto}}</p>
+        </div> 
         <div>
             <div class="center">
                 <div class="boxes-content">
+                    
+                    <!-- <div *ngFor="let meta of metas">
+                        <div class="box-content center">
+                            <div class="info-box info-color-box">
+                                <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
+                                <p class="num-day">{{meta.tiempo}}</p>                                
+                                <p>{{meta.código}}</p>
+                                <p>{{meta.monto}}</p>
+                                <progress id="file" value="50" max="100"> 32% </progress>
+                            </div>
+                            <p>{{meta.meta}}</p>
+                        </div>
+                    </div> -->
                     <div class="box-content center" (click)="nextView()">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">

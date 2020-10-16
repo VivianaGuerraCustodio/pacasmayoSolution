@@ -8,10 +8,26 @@ import { SavingService } from '../../services/saving.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor(private router: Router, public firestoreService: SavingService,) { }
-
+  metas
+  constructor(private router: Router, public firestoreService: SavingService,) {
+    console.log('metas: ', this.firestoreService.getMetas());
+    this.firestoreService.getMetas().subscribe(resp => {
+      this.metas = [];
+      resp.forEach((e: any) => {
+        this.metas.push({
+          id_user: e.payload.doc.data().id_user,
+          código: e.payload.doc.data().código,
+          meta: e.payload.doc.data().meta,
+          monto: e.payload.doc.data().monto,
+          tiempo: e.payload.doc.data().tiempo,
+        })        
+      })
+    })
+    console.log(this.metas);
+   }
+  
   ngOnInit(): void {
+    
   }
   alquiler: string;
   codigoBox = '';
