@@ -14,7 +14,7 @@ const {Card, Suggestion} = require('dialogflow-fulfillment');
 const admin = require('firebase-admin');
 const { get } = require('http');
 
-const serviceAcount = require('./firestoreKey.json');
+const serviceAcount = require('./config/billeterafamiliar-5b443-74243bfcad14.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAcount),
@@ -44,15 +44,17 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     let DNI = parseFloat(agent.parameters.DNI);
     let nombre = agent.parameters.nombre;
     let apellido = agent.parameters.apellido;
+    let celular = parseFloat(agent.parameters.celular);
 
     const docPersonalizado = DNI.toString();
 
     agent.add(`Se creó una nueva cuenta con los siguiente datos: DNI: ${DNI} Nombre completo: ${nombre} ${apellido}`);
 
-    return db.collection('familias').doc(docPersonalizado).set({ 
-        DNI: DNI,
-        nombre: nombre,
-        apellido: apellido
+    return db.collection('Familias').doc(docPersonalizado).set({ 
+        titularDni: DNI,
+        titularNombre: nombre,
+        titularApellido: apellido,
+        titularTelefono: celular
     });
   }
 
@@ -60,13 +62,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     let DNI = parseFloat(agent.parameters.DNI);
     const docPersonalizado = DNI.toString();
 
-    const docRef = db.collection('familias').doc(docPersonalizado)
+    const docRef = db.collection('Familias').doc(docPersonalizado)
     return docRef.get()
       .then(snap => {
         if(snap.exists) {
           const data = snap.data();
-          const nombre = data.nombre;
-          const apellido = data.apellido;
+          const nombre = data.titularNombre;
+          const apellido = data.titularApellido;
           agent.add(`Estás registrado como ${nombre} ${apellido}. Si desea escribir una meta, escriba Crear. Si desea ver su lista de metas, escriba Lista`);
           return console.log('Done!')
         } else {
@@ -108,7 +110,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         } else if (snap.size > 0) {
           const arr = [];
           snap.forEach((doc) => {
-            arr.push(`${doc.data().meta}`)
+            arr.push(`Meta: ${doc.data().meta} - Monto: ${doc.data().monto} - Tiempo: ${doc.data().tiempo}`)
           })
           agent.add(`${arr.join('\n')}`);
         }
