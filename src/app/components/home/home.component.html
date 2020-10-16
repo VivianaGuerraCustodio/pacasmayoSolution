@@ -96,28 +96,28 @@
             <p class="enphasis margin">¿Qué cajita quieres llenar?</p>
             <div class="center">
                 <div class=" boxes-content">
-                    <div class="info-box center info-color-box">
+                    <div class="info-box center info-color-box" (click)="boxAlquiler()">
                         <p>Alquiler</p>
                     </div>
                     <div class="info-box center info-color-box">
-                        <p>Alquiler</p>
+                        <p>Comida</p>
                     </div>
                     <div class="info-box center info-color-box">
-                        <p>Alquiler</p>
+                        <p>Salud</p>
                     </div>
                     <div class="info-box center info-color-box">
-                        <p>Alquiler</p>
+                        <p>Estudios</p>
                     </div>
                     <div class="info-box center info-color-box">
-                        <p>Alquiler</p>
+                        <p>Agua</p>
                     </div>
                     <div class="info-box center info-color-box">
-                        <p>Alquiler</p>
+                        <p>Luz</p>
                     </div>
                 </div>
             </div>
             <p class="enphasis">Si no está, define tu propia cajita:</p>
-            <input type="text" class="name-box margin custom-input-text">
+            <input type="text" class="name-box margin custom-input-text" [ngModel]="nameOfBox">
             <button class="btn-red-c" (click)="addNameNewBox()">Siguiente</button>
         </div>
         <div class="hide formMontoBox">
@@ -149,6 +149,8 @@
             <button class="btn-red-c" (click)="addDataBoxFirestore()">Siguiente</button>
         </div>
     </div>
+
+    <!-- FORM DE LA VISTA FINAL CON DATOS DE LA CAJITA CREADA -->
     <div class="hide formConfimationBox">
         <div class="star-content">
             <img class="star" src="../../../assets/star.svg" alt="">

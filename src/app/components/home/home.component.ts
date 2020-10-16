@@ -11,10 +11,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  alquiler: string;
+  nameOfBox= "";
+  newName = ""
   nextView(){
     document.querySelector('.formWelcome').classList.add('hide');
     document.querySelector('.formDetalleBox').classList.remove('hide');
+  }
+
+  boxAlquiler() {
+    this.alquiler = 'alquiler';
+    console.log(this.alquiler);
   }
 
   // AÑADIR CAJITA NUEVA
@@ -25,6 +32,8 @@ export class HomeComponent implements OnInit {
   addNameNewBox(){
     document.querySelector('.formNameBoxNew').classList.add('hide')
     document.querySelector('.formMontoBox').classList.remove('hide')
+    this.newName = this.nameOfBox
+    console.log(this.newName);
   }
   addTotalNewBox(){
     document.querySelector('.formMontoBox').classList.add('hide')
@@ -41,13 +50,4 @@ export class HomeComponent implements OnInit {
     // document.querySelector('.formAddBox').classList.remove('hide')
   }
 
-  // const functionDisplay = (id) => {
-  //   if (document.getElementById){ //se obtiene el id
-  //   var el = document.getElementById(id); //se define la variable "el" igual a nuestro div
-  //   el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
-  //   }
-  // };
-  // window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
-  //   muestra_oculta('contenido');/* "contenido_a_mostrar" es el nombre que le dimos al DIV */
-  //   }
 }
