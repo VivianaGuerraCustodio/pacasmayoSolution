@@ -36,4 +36,8 @@ export class SavingService {
       tiempo: dateLimite
     });
   }
+
+  getMetas(){
+    return this.firestore.collection('metas').snapshotChanges();
+  }
 }

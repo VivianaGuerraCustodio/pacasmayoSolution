@@ -8,10 +8,58 @@ import { SavingService } from '../../services/saving.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  metas
+  constructor(private router: Router, public firestoreService: SavingService,) {
+    console.log('metas: ', this.firestoreService.getMetas());
+    /* 
+    db.collection("pedidos")
+          .where("status", "==", "pendiente")
+          .onSnapshot(querySnapshot => {
+            const pending = [];
+            querySnapshot.forEach(function(doc) {
+              pending.push({
+                id: doc.id,
+                ...doc.data()
+              });
+            });
+            this.info_pedido = pending;
+          });
+    */
 
-  constructor(private router: Router, public firestoreService: SavingService,) { }
+
+    this.firestoreService.getMetas().forEach(function(e){
+      this.metas.push({
+        id: e.values()
+       
+
+       /* id_user: e.payload.doc.data().id_user,
+        código: e.payload.doc.data().código,
+        meta: e.payload.doc.data().meta,
+        monto: e.payload.doc.data().monto,
+        tiempo: e.payload.doc.data().tiempo,*/
+      })
+    })
+    console.log(this.metas);
+    
+    
+    /*.subscribe(resp => {
+      this.metas = [];
+      resp.forEach(function(e){
+        this.metas.push({
+          id: e.payload.doc.data()
+         /* id_user: e.payload.doc.data().id_user,
+          código: e.payload.doc.data().código,
+          meta: e.payload.doc.data().meta,
+          monto: e.payload.doc.data().monto,
+          tiempo: e.payload.doc.data().tiempo,
+        })
+      })
+    })
+    console.log(this.metas);*/
+  }
 
   ngOnInit(): void {
+
   }
   alquiler: string;
   codigoBox = '';
@@ -25,7 +73,7 @@ export class HomeComponent implements OnInit {
   hide() {
     document.querySelector('.modal-bg').classList.add('hide');
   }
-  nextView(){
+  nextView() {
     document.querySelector('.formWelcome').classList.add('hide');
     document.querySelector('.formDetalleBox').classList.remove('hide');
   }
@@ -45,26 +93,26 @@ export class HomeComponent implements OnInit {
   addNameNewBox() {
     document.querySelector('.formNameBoxNew').classList.add('hide')
     document.querySelector('.formMontoBox').classList.remove('hide')
-    localStorage.setItem('nameOfBox',this.nameOfBox);
+    localStorage.setItem('nameOfBox', this.nameOfBox);
     // this.newName = $scope.pruebaName;
     console.log(this.nameOfBox);
 
-    
+
   }
   addTotalNewBox() {
     document.querySelector('.formMontoBox').classList.add('hide')
     document.querySelector('.formFechaLimiteBox').classList.remove('hide')
-    localStorage.setItem('cantOfBox',this.cantOfBox);
+    localStorage.setItem('cantOfBox', this.cantOfBox);
   }
   addDataBoxFirestore() {
     document.querySelector('.formFechaLimiteBox').classList.add('hide')
     document.querySelector('.formHeadAddBox').classList.add('hide')
     document.querySelector('.formConfimationBox').classList.remove('hide')
-    localStorage.setItem('dateLimiteOfBox',this.dateLimiteOfBox);
+    localStorage.setItem('dateLimiteOfBox', this.dateLimiteOfBox);
     this.DNI = parseInt(localStorage.getItem('DNI'));
     // console.log(typeof this.DNI);
     this.nameOfBox = this.nameOfBox.toLowerCase();
-    this.codigoConcatenado = (localStorage.getItem('DNI').concat('-',(this.nameOfBox.substr(0,3))));
+    this.codigoConcatenado = (localStorage.getItem('DNI').concat('-', (this.nameOfBox.substr(0, 3))));
     // console.log(this.codigoConcatenado);
     this.firestoreService.newBox(this.codigoConcatenado, this.DNI, this.nameOfBox, this.cantOfBox, this.dateLimiteOfBox).then(() => {
       // this.codigoBox = '';
@@ -73,10 +121,10 @@ export class HomeComponent implements OnInit {
       // this.cantOfBox = '';
       // this.router.navigate(['/home']);
     })
-    
+
   }
   listo() {
-    document.querySelector('.formWelcome').classList.remove('hide')    
+    document.querySelector('.formWelcome').classList.remove('hide')
     // document.querySelector('.formAddBox').classList.remove('hide')
   }
 

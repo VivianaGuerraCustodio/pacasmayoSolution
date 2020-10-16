@@ -20,10 +20,30 @@
 
         <p class="margin center">Este mes has ahorrado :</p>
         <p class="total enphasis center margin">S./ 430.00</p>
-
+        <div class="media" *ngFor="let meta in metas">
+            <!-- <p>{{meta.tiempo}}</p>                                
+                               
+                <progress id="file" value="50" max="100"> 32% </progress>
+                <p>{{meta.código}}</p>  -->
+            <!-- <p>{{meta.meta}}</p>  -->
+            <p>meta: {{meta.monto}}</p>
+        </div>
         <div>
             <div class="center">
                 <div class="boxes-content">
+
+                    <!-- <div *ngFor="let meta of metas">
+                        <div class="box-content center">
+                            <div class="info-box info-color-box">
+                                <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
+                                <p class="num-day">{{meta.tiempo}}</p>                                
+                                <p>{{meta.código}}</p>
+                                <p>{{meta.monto}}</p>
+                                <progress id="file" value="50" max="100"> 32% </progress>
+                            </div>
+                            <p>{{meta.meta}}</p>
+                        </div>
+                    </div> -->
                     <div class="box-content center" (click)="nextView()">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
@@ -72,16 +92,33 @@
 
     <!-- DETALLES/INFORMACION DE TU CAJITA -->
     <div class="report enphasisSecond hide formDetalleBox">
-        <h4 class="enphasis center margin">Tu cajita</h4>
-        <h2 class="enphasis name-box pad">Alquiler</h2>
-        <div class="enphasis margin">
+        <h4 class="enphasis margin">Tu cajita</h4>
+        <h2 class="enphasis center name-box pad">Alquiler</h2>
+        <div class="center">
+            <img src="assets/box.png" alt="caja">
+        </div>
+
+        <div class="center cod-deposito">
             <p class="pad">Código para depósito:</p>
             <p class="pad codigo">44565444-ALQ1</p>
         </div>
-        <p class="margin">¡Estás a 2 semanas de cumplir tu meta!</p>
-        <!-- <label for="file">Downloading progress:</label> -->
-        <progress class="progress-bar2" id="file" value="50" max="100"> 32% </progress>
+        <div class="row">
+            <div class="column center">
+                <p class="light">TE AYUDAMOS CON</p>
+                <p class="bold">S/35</p>
+            </div>
+            <button class="btn-red-principal">¡Lo quiero!</button>
+        </div>
+        <br>
+        <h2 class="enphasis">Tu progreso</h2>
+        <p class="margin"> ⏰¡Estás a 2 semanas de cumplir tu meta!</p>
+        <div class="progress-bar2">
+            <progress id="file" value="50" max="100"> 32% </progress>
+        </div>
+        <p class="center margin">¡Has acumulado S/280 de S/600!</p>
+        <br>
         <h3 class="enphasis">Tus depósitos:</h3>
+        <br>
         <div class="item-deposito">
             <th>S/. 25.00</th>
             <th>12/10/2020</th>
