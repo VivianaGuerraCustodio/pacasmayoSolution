@@ -14,7 +14,7 @@ const {Card, Suggestion} = require('dialogflow-fulfillment');
 const admin = require('firebase-admin');
 const { get } = require('http');
 
-const serviceAcount = require('./config/billeterafamiliar-5b443-74243bfcad14.json');
+const serviceAcount = require('./config/billeterafamiliar-5b443-3e909e3a23b6.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAcount),
@@ -31,8 +31,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  
   function welcome(agent) {
     agent.add(`¡Hola!
-¡En Pacasmayo queremos que cumplas tus sueños! 😊
-¿Deseas crear una cuenta? o ¿Deseas entrar a tu cuenta?`);
+¡En Ayu queremos ayudarte a cumplir tus planes! 😊
+¿Eres nuevo? o ¿Ya tienes una cuenta?`);
   }
  
   function fallback(agent) {
@@ -48,7 +48,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
     const docPersonalizado = DNI.toString();
 
-    agent.add(`Se creó una nueva cuenta con los siguiente datos: DNI: ${DNI} Nombre completo: ${nombre} ${apellido}`);
+    agent.add(`¡Felicitaciones! 🎉
+Hemos creado tu cuenta con los siguientes datos:
+- DNI: ${DNI}
+- Nombre: ${nombre} ${apellido}`);
 
     return db.collection('Familias').doc(docPersonalizado).set({ 
         titularDni: DNI,
@@ -69,7 +72,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
           const data = snap.data();
           const nombre = data.titularNombre;
           const apellido = data.titularApellido;
-          agent.add(`Estás registrado como ${nombre} ${apellido}. Si desea escribir una meta, escriba Crear. Si desea ver su lista de metas, escriba Lista`);
+          agent.add(`Bienvenido ${nombre}. Si deseas crear una cajita de ahorro escribe CREAR. Si deseas ver tus cajitas existentes, escribe VER.`);
           return console.log('Done!')
         } else {
           agent.add('Tu nombre no está registrado. Para crear una cuenta, escriba Inicio');
@@ -87,14 +90,21 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     const newMeta = meta.join(' ');
     const tresDig = newMeta.slice(0,3);
 
-    agent.add(`Tu meta se ha registrado con el número de DNI: ${DNI} . Tu nueva meta es ${newMeta}, el monto asignado es ${monto} y el tiempo para cumplir esta meta es ${tiempo}.`);
+    agent.add(`Felicidades¡ 🎉 Tu nueva cajita se ha registrado.
+- Cajita: ${newMeta}
+- Monto: ${monto}
+- Tiempo: ${tiempo}`);
 
     return db.collection('metas').add({
         id_user: DNI,
         meta: newMeta,
         monto: monto,
         tiempo: tiempo,
-        código: `${DNI}-${tresDig}`
+        código: `${DNI}-${tresDig}`,
+        progreso: '',
+        montoPagado: 0,
+        montoFaltante: 0,
+        puntos: 0
     });
   }
 
@@ -110,7 +120,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         } else if (snap.size > 0) {
           const arr = [];
           snap.forEach((doc) => {
-            arr.push(`Meta: ${doc.data().meta} - Monto: ${doc.data().monto} - Tiempo: ${doc.data().tiempo}`)
+            arr.push(`⭕ Meta: ${doc.data().meta} - Monto: ${doc.data().monto} - Tiempo: ${doc.data().tiempo}`)
           })
           agent.add(`${arr.join('\n')}`);
         }
