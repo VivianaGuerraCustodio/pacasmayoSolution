@@ -9,11 +9,6 @@
   margin: 0;
 }
 
-.margin {
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
 .star-content {
   // display: flex;
   margin: 20px 0;
@@ -159,10 +154,10 @@ progress::-webkit-progress-value {
 }
 
 .modal-bg {
-  background-color: rgba(128, 128, 128, 0.145);
-  width: 100vp;
-  height: 100vp;
-  margin: 0;
+  background-color: rgba(63, 58, 58, 0.282);
+  width: 100vw;
+  height: 100vh;
+  position:absolute;
   box-sizing: content-box;
   z-index: +1;
   p{
@@ -171,14 +166,16 @@ progress::-webkit-progress-value {
   .plus{
     font-size:40px;
     transform: rotate(45deg);
-    margin:0;
-    z-index:3;
-    position: relative;
+    position:relative;
+    float: right;
+    left:90px;
+    right: 2px;
   }
   .box-modal {
     box-sizing: border-box;
+    position:relative;
     border-radius: 20px;
-    background: rgba(223, 165, 165, 0.165);
+    background: rgb(245, 242, 242);
     width: 250px;
     height: 330px;
   }
