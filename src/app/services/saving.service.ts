@@ -26,4 +26,14 @@ export class SavingService {
   getSaving() {
     return this.firestore.collection("ahorro").snapshotChanges();
   }
+
+  newBox(código, DNI, nameBox, montoBox, dateLimite){
+    return this.firestore.collection('metas').add({
+      código: código,
+      id_user: DNI,
+      meta: nameBox,
+      monto: montoBox,
+      tiempo: dateLimite
+    });
+  }
 }
