@@ -17,6 +17,7 @@ import { NewBoxesComponent } from './components/new-boxes/new-boxes.component';
 import { FirstViewComponent } from './components/first-view/first-view.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { PointersComponent } from './components/pointers/pointers.component';
+import { NavBarBottomComponent } from './components/nav-bar-bottom/nav-bar-bottom.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PointersComponent } from './components/pointers/pointers.component';
     FirstViewComponent,
     SignInComponent,
     PointersComponent,
+    NavBarBottomComponent,
   ],
   imports: [
     BrowserModule,
