@@ -18,6 +18,9 @@
   // display: flex;
   margin: 20px 0;
 }
+.star {
+  width: 150px;
+}
 .total {
   font-size: 30px;
   font-weight: bold;
@@ -52,9 +55,9 @@
   background-color: $sombra;
   display: flex;
   align-items: center;
-  border:4px dashed $gris;
-  p{
-    color:$gris;
+  border: 4px dashed $gris;
+  p {
+    color: $gris;
   }
 }
 
@@ -74,15 +77,11 @@
   font-size: 25px;
   font-weight: bold;
 }
-// progress[value] {
-//   display: flex;
-//   width: 90%;
-//   height: 30px;
-// }
-.progress-bar2 {
+
+/*.progress-bar2 {
   width: 100%;
   height: 60px;
-}
+}*/
 
 .item-deposito {
   background-color: pink;
@@ -97,12 +96,12 @@ th {
 
 // NEW BOX
 .img-paso1 {
-  width: 95%;
-  height: 70%;
+  width: 300px;
+  height: 45px;
   margin: 15px 0;
 }
 
-.img-box{
+.img-box {
   display: flex;
   justify-content: center;
 }
@@ -120,10 +119,10 @@ th {
   border-radius: 0.4em;
 }
 .btn-dias {
-  @include width-height(47%, 30px);  
+  @include width-height(47%, 30px);
 }
 .btn-mes {
-  @include width-height(30%, 30px);  
+  @include width-height(30%, 30px);
 }
 
 .box-content {
@@ -137,15 +136,24 @@ th {
     height: 18px;
     width: 60px;
     border-radius: 9px;
-  
   }
-  progress::-webkit-progress-bar {
+}
+.progress-bar2 {
+  width: 100%;
+  .progress-bar2::-webkit-progress-bar{
     background-color: #f3f3f3;
     border-radius: 9px;
   }
-  progress::-webkit-progress-value {
+  .progress-bar2::-webkit-progress-value {
     background: $colorsecundario2;
     border-radius: 9px;
   }
-  
+}
+progress::-webkit-progress-bar{
+  background-color: #f3f3f3;
+  border-radius: 9px;
+}
+progress::-webkit-progress-value {
+  background: $colorsecundario2;
+  border-radius: 9px;
 }
