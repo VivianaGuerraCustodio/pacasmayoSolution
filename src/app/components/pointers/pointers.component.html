@@ -1,1 +1,23 @@
-<p>pointers works!</p>
+<div class="bg-home">
+    <div class=" center row">
+        <p>Tus logros</p>
+        <div class="row">
+            <img src="assets/moneda.png" alt="puntaje">
+            <p>0</p>
+        </div>
+    </div>
+    <div class="center">
+        <img src="assets/medalla.png" alt="medalla">
+        <p class="word-welcome">¡Acumula puntos llenando tus cajitas a tiempo!</p>
+        <div class="btn-red-principal center">
+            <p>Has acumulado 0 puntos</p>
+        </div>
+    </div>
+</div>
+<div class="player cero">
+    <div class="row icons">
+        <img (click)="redirectHome()" class="icon-init" src="assets/inicioGray.png" alt="inicio">
+        <img (click)="redirectLogros()" class="icon-points" src="assets/logros.png" alt="logros">
+        <img (click)="redirectHome()" class="icon-profile" src="assets/miembrosGray.png" alt="perfil">
+    </div>
+</div>

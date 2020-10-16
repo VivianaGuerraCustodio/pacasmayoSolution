@@ -189,10 +189,7 @@ progress::-webkit-progress-value {
     width: 200px;
   }
 }
-.welcome {
-  background-image: url("/assets/semicircle.png");
-  background-repeat: no-repeat;
-}
+
 .user {
   width: 20%;
   height: 20%;
@@ -203,4 +200,12 @@ progress::-webkit-progress-value {
   font-weight: bold;
   font-size: 30px;
   line-height: 23px;
+}
+.level {
+  @include width-height(90px, 40px);
+  background-color: $colorprimario;
+  border: none;
+  color: white;
+  border-radius: 2.4em;
+  margin: 1.1em;
 }

@@ -1,21 +1,23 @@
 <div class="modal-bg center">
     <div class="box-modal center">
-        <p (click)="hide()"  class="plus">+</p>
-      <p>¡Felicidades, <br> estas un paso mas <br> cerca de cumplir tus<br> metas!</p>
-      <img class="img-box" src="assets/family/familyOfThree.png">
+        <p (click)="hide()" class="plus">+</p>
+        <p>¡Felicidades, <br> estas un paso mas <br> cerca de cumplir tus<br> metas!</p>
+        <img class="img-box" src="assets/family/familyOfThree.png">
     </div>
 </div>
 
-<div class="welcome enphasisSecond ">
+<div class="welcome bg-home enphasisSecond ">
     <!--  -->
     <div class="formWelcome">
-        <h1 class="enphasis ">¡Bienvenida <br>Familia (nombre)!</h1>
-        <div class="level-content center">
-            <p class="margin">Nivel Ahorrado:</p>
-            <div class="star-content">
-                <img src="../../../assets/starLevel.svg" alt="">
+        <p class="word-welcome margin-word  ">¡Bienvenida <br> Familia (nombre)!</p>
+        <div class="center">
+            <img src="assets/circlefamily.png" alt="familia">
+            <div class="center level ">
+                <p class="margin center">Nivel 1</p>
             </div>
         </div>
+
+
         <p class="margin center">Este mes has ahorrado :</p>
         <p class="total enphasis center margin">S./ 430.00</p>
 
@@ -132,11 +134,12 @@
                 </div>
             </div>
             <p class="enphasis">Si no está, define tu propia cajita:</p>
-            <input type="text" class="name-box margin custom-input-text width-input" required [(ngModel)]="nameOfBox" name="" id="">
+            <input type="text" class="name-box margin custom-input-text width-input" required [(ngModel)]="nameOfBox"
+                name="" id="">
             <div class="center">
                 <button class="btn-red-c " (click)="addNameNewBox()">Siguiente</button>
             </div>
-            
+
         </div>
         <div class="hide formMontoBox">
             <div class="center margin">
@@ -182,13 +185,15 @@
             <img class="star" src="assets/star.svg" alt="">
             <h3 class="enphasis e-title">¡Felicidades por tu nueva cajita! </h3>
         </div>
-        
+
         <p class="enphasisSecond margin pad">Tú código es:</p>
         <h2 class="enphasis margin">44565444-{{nameOfBox}}</h2>
         <p class="enphasisSecond margin pad">Puedes encontrarlo al revisar el estado de tu cajita.</p>
-        <p class="enphasis margin margin2">¡Si deposítas 17.80 soles diariamente en tu cajita, conseguirás tu meta en el tiempo establecido! </p>
+        <p class="enphasis margin margin2">¡Si deposítas 17.80 soles diariamente en tu cajita, conseguirás tu meta en el
+            tiempo establecido! </p>
         <div class="center margin pad">
             <button class="btn-red-c" (click)="listo()">Listo</button>
-        </div>        
+        </div>
     </div>
 </div>
+<app-nav-bar-bottom></app-nav-bar-bottom>

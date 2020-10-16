@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pointers',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PointersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  redirectLogros(){
+    this.router.navigate(['/pointer']);
+  }
+  redirectHome() {
+    this.router.navigate(['/home']);
+  }
 }
