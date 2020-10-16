@@ -20,14 +20,15 @@
 
         <p class="margin center">Este mes has ahorrado :</p>
         <p class="total enphasis center margin">S./ 430.00</p>
-        <div class="media" *ngFor="let meta for metas">            
-                <!-- <p>{{meta.tiempo}}</p>                                
-                               
+        <!-- <div class="media" *ngFor="let meta of metas">            
+                <p>{{meta.tiempo}}</p>
                 <progress id="file" value="50" max="100"> 32% </progress>
-                <p>{{meta.código}}</p>  -->
-                <!-- <p>{{meta.meta}}</p>  -->
-            <p>meta: {{meta.monto}}</p>
-        </div> 
+                <p>{{meta.código}}</p>  
+                <p>{{meta.código}}</p>
+                <p>{{meta.tiempo}}</p> 
+                <p>{{meta.meta}}</p>  
+            <p>meta: {{meta.tiempo}}</p>
+        </div>  -->
         <div>
             <div class="center">
                 <div class="boxes-content">
@@ -96,7 +97,7 @@
         <h2 class="enphasis name-box pad">Alquiler</h2>
         <div class="enphasis margin">
             <p class="pad">Código para depósito:</p>
-            <p class="pad codigo">44565444-ALQ1</p>
+            <p class="pad codigo">{{DNI}}-alq</p>
         </div>
         <p class="margin">¡Estás a 2 semanas de cumplir tu meta!</p>
         <!-- <label for="file">Downloading progress:</label> -->
