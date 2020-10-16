@@ -17,8 +17,6 @@ export class SignInComponent implements OnInit {
   getIn() {
     localStorage.setItem("DNI", this.DNI);
     console.log('dni: ', this.DNI)
-    setTimeout(() => {
-      this.router.navigate(['/home']);
-    }, 6000);
+    this.router.navigate(['/home']);
   }
 }
