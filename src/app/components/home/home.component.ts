@@ -27,7 +27,7 @@ db.collection("pedidos")
     this.firestoreService.getMetas().subscribe(resp => {
       this.metas = [];
       resp.forEach((e: any) => {
-        this.metas.push({
+        return this.metas.push({
           id_user: e.payload.doc.data().id_user,
           código: e.payload.doc.data().código,
           meta: e.payload.doc.data().meta,
@@ -107,6 +107,7 @@ db.collection("pedidos")
   listo() {
     document.querySelector('.formWelcome').classList.remove('hide')    
     // document.querySelector('.formAddBox').classList.remove('hide')
+    document.querySelector('.formConfimationBox').classList.add('hide')
   }
 
 }
