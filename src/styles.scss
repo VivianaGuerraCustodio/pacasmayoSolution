@@ -2,13 +2,13 @@
 $colorprimario: #fe4a49;
 $colorprimario2: #2ab7ca;
 $colorsecundario: #fed766;
-$colorsecundario2:#A4F490;
-$sombra : #E6E6EA;
+$colorsecundario2: #a4f490;
+$sombra: #e6e6ea;
 $gris: #828282;
 * {
     font-family: roboto, sans-serif;
     scroll-behavior: smooth;
-    outline:none;
+    outline: none;
 }
 // PROBANDO
 body {
@@ -19,9 +19,9 @@ body {
     width: $width;
     height: $height;
 }
-@mixin display-flex-direction($display,$flex-direction){
-    display:$display;
-    flex-direction:$flex-direction;
+@mixin display-flex-direction($display, $flex-direction) {
+    display: $display;
+    flex-direction: $flex-direction;
 }
 .enphasis {
     color: $colorprimario;
@@ -65,17 +65,40 @@ body {
     border: 3px solid $colorprimario2;
     border-radius: 7px;
 }
+
 .wrap {
     display: flex;
     box-sizing: border-box;
     flex-flow: column wrap;
     justify-content: space-around;
 }
-.hide{
+.hide {
     display: none;
 }
 .width-input {
     width: 100%;
+}
+.column {
+    @include display-flex-direction(flex, column);
+    justify-content: space-between;
+    width: 50%;
+}
+
+.row {
+    @include display-flex-direction(flex, row);
+    justify-content: space-between;
+    justify-items: center;
+    p {
+        color: $colorprimario2;
+    }
+    input[type="text"],
+    input[type="number"] {
+        margin: 4px;
+    }
+}
+.auto {
+    margin: auto;
+    box-sizing: border-box;
 }
 .e-title {
     font-weight: bold;
@@ -93,7 +116,4 @@ body {
 .margin2 {
     margin-left: 15px;
     margin-right: 15px;
-}
-button:disabled {
-    background-color: rgba(255, 0, 0, 0.6);;
 }

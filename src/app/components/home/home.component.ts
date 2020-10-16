@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit {
     console.log(this.alquiler);
   }
 
+  hide(){
+    document.querySelector('.modal-bg').classList.add('hide');
+  }
   // AÑADIR CAJITA NUEVA
   addNewBox(){
     document.querySelector('.formWelcome').classList.add('hide')

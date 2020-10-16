@@ -11,8 +11,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  titularNombre = '';
-  titularContra = '';
-
+  DNI = '';
+  password = '';
 }

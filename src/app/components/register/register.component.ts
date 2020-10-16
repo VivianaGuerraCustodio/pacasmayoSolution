@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SavingService } from '../../services/saving.service';
-import { HomeComponent } from '../home/home.component';
-import { routes } from '../../app-routing.module'
-import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +9,7 @@ import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/route
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-  constructor(public firestoreService: SavingService, private rutaActiva: ActivatedRoute) { }
+  constructor(public firestoreService: SavingService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -33,7 +31,7 @@ export class RegisterComponent implements OnInit {
       this.titularApellido = '';
       this.titularDNI = '';
       this.titularTelefono = '';
-
+      this.router.navigate(['/home']);
     })
 
   }

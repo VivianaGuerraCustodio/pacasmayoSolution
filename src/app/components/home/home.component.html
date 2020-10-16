@@ -1,15 +1,24 @@
+<div class="modal-bg center">
+    <div class="box-modal center">
+        <p (click)="hide()"  class="plus">+</p>
+      <p>¡Felicidades, <br> estas un paso mas <br> cerca de cumplir tus<br> metas!</p>
+      <img class="img-box" src="assets/family/familyOfThree.png">
+    </div>
+  </div>
+
 <div class="welcome enphasisSecond ">
     <!--  -->
     <div class="formWelcome">
-        <h1 class="enphasis">¡Bienvenida Familia (nombre)!</h1>
-        <div class="level-content">
+        <h1 class="enphasis ">¡Bienvenida <br>Familia (nombre)!</h1>
+        <div class="level-content center">
             <p class="margin">Nivel Ahorrado:</p>
             <div class="star-content">
                 <img src="../../../assets/starLevel.svg" alt="">
             </div>
         </div>
-        <p class="margin">Este mes has ahorrado :</p>
-        <p class="total enphasis margin">S./ 430.00</p>
+        <p class="margin center">Este mes has ahorrado :</p>
+        <p class="total enphasis center margin">S./ 430.00</p>
+
         <div>
             <div class="center">
                 <div class="boxes-content">
@@ -92,7 +101,9 @@
             <h3 class="enphasis ">Crea una nueva cajita</h3>
         </div>
         <div class="formNameBoxNew">
-            <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+            <div class="center">
+                <img class="img-paso1" src="assets/steps.png" alt="">
+            </div>
             <p class="enphasis margin">¿Qué cajita quieres llenar?</p>
             <div class="center">
                 <div class=" boxes-content">
@@ -121,15 +132,19 @@
             <button class="btn-red-c" (click)="addNameNewBox()">Siguiente</button>
         </div>
         <div class="hide formMontoBox">
-            <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
-            <img class="img-box" src="../../../assets/box.svg" alt="">
+            <div class="center">
+                <img class="img-paso1" src="assets/stepsTwo.png" alt="">
+                <img class="img-box" src="assets/box.svg" alt="">
+            </div>
             <p class="enphasisSecond margin">Para Alquiler</p>
             <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
             <input type="text" class="name-box margin custom-input-text">
             <button class="btn-red-c" (click)="addTotalNewBox()">Siguiente</button>
         </div>
         <div class="hide formFechaLimiteBox">
-            <img class="img-paso1" src="../../../assets/paso1.PNG" alt="">
+            <div class="center">
+                <img class="img-paso1 " src="assets/stepsComplete.png" alt="">
+            </div>
             <p class="enphasis margin">Debes llenar tu cajita con:</p>
             <p class="enphasisSecond margin">500</p>
             <p class="enphasis margin">¿Cuando lo necesitas?</p>
@@ -153,7 +168,7 @@
     <!-- FORM DE LA VISTA FINAL CON DATOS DE LA CAJITA CREADA -->
     <div class="hide formConfimationBox">
         <div class="star-content">
-            <img class="star" src="../../../assets/star.svg" alt="">
+            <img class="star" src="assets/star.svg" alt="">
         </div>
         <h3 class="enphasis">¡Felicidades por tu nueva cajita! </h3>
         <p class="enphasisSecond margin">Tú código es:</p>

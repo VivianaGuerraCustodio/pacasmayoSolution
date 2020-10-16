@@ -50,9 +50,9 @@
   background-color: $sombra;
   display: flex;
   align-items: center;
-  border:4px dashed $gris;
-  p{
-    color:$gris;
+  border: 4px dashed $gris;
+  p {
+    color: $gris;
   }
 }
 
@@ -72,15 +72,11 @@
   font-size: 25px;
   font-weight: bold;
 }
-// progress[value] {
-//   display: flex;
-//   width: 90%;
-//   height: 30px;
-// }
-.progress-bar2 {
+
+/*.progress-bar2 {
   width: 100%;
   height: 60px;
-}
+}*/
 
 .item-deposito {
   background-color: pink;
@@ -95,31 +91,12 @@ th {
 
 // NEW BOX
 .img-paso1 {
-  width: 95%;
-  height: 70%;
+  width: 300px;
+  height: 45px;
   margin: 15px 0;
 }
 
-/*.box-new{
-  margin: 5px;
-  width: 27%;
-  height: 100px;
-  background-color: yellow;
-  border-radius: 10px;
-  text-align: center;
-  // padding-top: 50%;
-}*/
-
-// .btn-red-principal2 {
-//   @include width-height(100%, 35px);
-//   background-color: $colorprimario;
-//   border: none;
-//   color: white;
-//   border-radius: 0.4em;
-//   // margin: 1.1em;
-// }
-
-.img-box{
+.img-box {
   display: flex;
   justify-content: center;
 }
@@ -137,10 +114,10 @@ th {
   border-radius: 0.4em;
 }
 .btn-dias {
-  @include width-height(47%, 30px);  
+  @include width-height(47%, 30px);
 }
 .btn-mes {
-  @include width-height(30%, 30px);  
+  @include width-height(30%, 30px);
 }
 
 .box-content {
@@ -154,15 +131,70 @@ th {
     height: 18px;
     width: 60px;
     border-radius: 9px;
-  
   }
-  progress::-webkit-progress-bar {
+}
+.progress-bar2 {
+  width: 100%;
+  .progress-bar2::-webkit-progress-bar {
     background-color: #f3f3f3;
     border-radius: 9px;
   }
-  progress::-webkit-progress-value {
+  .progress-bar2::-webkit-progress-value {
     background: $colorsecundario2;
     border-radius: 9px;
   }
-  
+}
+progress::-webkit-progress-bar {
+  background-color: #f3f3f3;
+  border-radius: 9px;
+}
+progress::-webkit-progress-value {
+  background: $colorsecundario2;
+  border-radius: 9px;
+}
+
+.modal-bg {
+  background-color: rgba(63, 58, 58, 0.282);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  z-index: +1;
+  p {
+    color: $colorprimario2;
+  }
+  .plus {
+    font-size: 40px;
+    transform: rotate(45deg);
+    position: relative;
+    float: right;
+    left: 90px;
+    right: 2px;
+  }
+  .box-modal {
+    box-sizing: border-box;
+    position: relative;
+    border-radius: 20px;
+    background: rgb(245, 242, 242);
+    width: 250px;
+    height: 330px;
+  }
+
+  .img-box {
+    width: 200px;
+  }
+}
+.welcome {
+  background-image: url("/assets/semicircle.png");
+  background-repeat: no-repeat;
+}
+.user {
+  width: 20%;
+  height: 20%;
+  margin: 15px;
+  border-radius: 110px;
 }
