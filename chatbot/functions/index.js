@@ -14,7 +14,7 @@ const {Card, Suggestion} = require('dialogflow-fulfillment');
 const admin = require('firebase-admin');
 const { get } = require('http');
 
-const serviceAcount = require('./config/billeterafamiliar-5b443-firebase-adminsdk-16q31-6ade6c5212.json');
+const serviceAcount = require('./firestoreKey.json');
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAcount),
