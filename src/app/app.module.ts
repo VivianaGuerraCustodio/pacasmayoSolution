@@ -16,6 +16,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { NewBoxesComponent } from './components/new-boxes/new-boxes.component';
 import { FirstViewComponent } from './components/first-view/first-view.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { PointersComponent } from './components/pointers/pointers.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     NewBoxesComponent,
     FirstViewComponent,
     SignInComponent,
+    PointersComponent,
   ],
   imports: [
     BrowserModule,
