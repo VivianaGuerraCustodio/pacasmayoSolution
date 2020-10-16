@@ -4,7 +4,7 @@
       <p>¡Felicidades, <br> estas un paso mas <br> cerca de cumplir tus<br> metas!</p>
       <img class="img-box" src="assets/family/familyOfThree.png">
     </div>
-  </div>
+</div>
 
 <div class="welcome enphasisSecond ">
     <!--  -->
@@ -25,25 +25,7 @@
                     <div class="box-content center" (click)="nextView()">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
-                            <p class="num-day">5 días</p>
-                            <!-- <label for="file">Downloading progress:</label> -->
-                            <progress id="file" value="50" max="100"> 32% </progress>
-                        </div>
-                        <p>Pasajes</p>
-                    </div>
-                    <div class="box-content center">
-                        <div class="info-box info-color-box">
-                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
-                            <p>5 días</p>
-                            <!-- <label for="file">Downloading progress:</label> -->
-                            <progress id="file" value="50" max="100"> 32% </progress>
-                        </div>
-                        <p>Comida</p>
-                    </div>
-                    <div class="box-content center">
-                        <div class="info-box info-color-box">
-                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
-                            <p>5 días</p>
+                            <p class="num-day">10 días</p>
                             <!-- <label for="file">Downloading progress:</label> -->
                             <progress id="file" value="50" max="100"> 32% </progress>
                         </div>
@@ -52,9 +34,27 @@
                     <div class="box-content center">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
+                            <p>20 días</p>
+                            <!-- <label for="file">Downloading progress:</label> -->
+                            <progress id="file" value="30" max="100"> 32% </progress>
+                        </div>
+                        <p>Luz</p>
+                    </div>
+                    <div class="box-content center">
+                        <div class="info-box info-color-box">
+                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                             <p>5 días</p>
                             <!-- <label for="file">Downloading progress:</label> -->
-                            <progress id="file" value="50" max="100"> 32% </progress>
+                            <progress id="file" value="80" max="100"> 32% </progress>
+                        </div>
+                        <p>Pasajes</p>
+                    </div>
+                    <div class="box-content center">
+                        <div class="info-box info-color-box">
+                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
+                            <p>25 días</p>
+                            <!-- <label for="file">Downloading progress:</label> -->
+                            <progress id="file" value="10" max="100"> 32% </progress>
                         </div>
                         <p>Banco X</p>
                     </div>
@@ -70,27 +70,31 @@
 
     <!-- DETALLES/INFORMACION DE TU CAJITA -->
     <div class="report enphasisSecond hide formDetalleBox">
-        <h4 class="enphasis center">Tu cajita</h4>
-        <h2 class="enphasis name-box pad">ALQUILER</h2>
-        <div class="enphasis">
-            <p class="pad">Código para depósito</p>
+        <h4 class="enphasis center margin">Tu cajita</h4>
+        <h2 class="enphasis name-box pad">Alquiler</h2>
+        <div class="enphasis margin">
+            <p class="pad">Código para depósito:</p>
             <p class="pad codigo">44565444-ALQ1</p>
         </div>
-        <p>¡Estás a 2 semanas de cumplir tu meta!</p>
+        <p class="margin">¡Estás a 2 semanas de cumplir tu meta!</p>
         <!-- <label for="file">Downloading progress:</label> -->
         <progress class="progress-bar2" id="file" value="50" max="100"> 32% </progress>
-        <h1 class="enphasis">Tus depósitos</h1>
+        <h3 class="enphasis">Tus depósitos:</h3>
         <div class="item-deposito">
             <th>S/. 25.00</th>
             <th>12/10/2020</th>
         </div>
         <div class="item-deposito">
-            <th>S/. 25.00</th>
-            <th>12/10/2020</th>
+            <th>S/. 15.00</th>
+            <th>10/10/2020</th>
         </div>
         <div class="item-deposito">
-            <th>S/. 25.00</th>
-            <th>12/10/2020</th>
+            <th>S/. 10.00</th>
+            <th>5/10/2020</th>
+        </div>
+        <div class="item-deposito">
+            <th>S/. 5.00</th>
+            <th>4/10/2020</th>
         </div>
     </div>
 
@@ -98,7 +102,7 @@
     <div class="new-box hide formAddBox">
         <div class="formHeadAddBox">
             <button>atras</button>
-            <h3 class="enphasis ">Crea una nueva cajita</h3>
+            <h3 class="enphasis center">Crea una nueva cajita</h3>
         </div>
         <div class="formNameBoxNew">
             <div class="center">
@@ -128,26 +132,31 @@
                 </div>
             </div>
             <p class="enphasis">Si no está, define tu propia cajita:</p>
-            <input type="text" class="name-box margin custom-input-text">
-            <button class="btn-red-c" (click)="addNameNewBox()">Siguiente</button>
+            <input type="text" class="name-box margin custom-input-text width-input" required [(ngModel)]="nameOfBox" name="" id="">
+            <div class="center">
+                <button class="btn-red-c" (click)="addNameNewBox()">Siguiente</button>
+            </div>
+            
         </div>
         <div class="hide formMontoBox">
-            <div class="center">
+            <div class="center margin">
                 <img class="img-paso1" src="assets/stepsTwo.png" alt="">
                 <img class="img-box" src="assets/box.svg" alt="">
             </div>
             <p class="enphasisSecond margin">Para Alquiler</p>
             <p class="enphasis margin">¿Cuánto quieres ahorrar?</p>
-            <input type="text" class="name-box margin custom-input-text">
-            <button class="btn-red-c" (click)="addTotalNewBox()">Siguiente</button>
+            <input type="number" class="name-box margin custom-input-text width-input" required [(ngModel)]="cantOfBox">
+            <div class="center">
+                <button class="btn-red-c" (click)="addTotalNewBox()">Siguiente</button>
+            </div>
         </div>
         <div class="hide formFechaLimiteBox">
             <div class="center">
                 <img class="img-paso1 " src="assets/stepsComplete.png" alt="">
             </div>
-            <p class="enphasis margin">Debes llenar tu cajita con:</p>
-            <p class="enphasisSecond margin">500</p>
-            <p class="enphasis margin">¿Cuando lo necesitas?</p>
+            <p class="enphasis margin e-title">Debes llenar tu cajita con:</p>
+            <p class="enphasisSecond margin es-title">S/. {{cantOfBox}}</p>
+            <p class="enphasis margin e-title">¿Cuando lo necesitas?</p>
             <p class="enphasisSecond margin">En días</p>
             <div class="content-fechaEnd">
                 <button class="btn2 btn-dias">7</button>
@@ -160,21 +169,26 @@
                 <button class="btn2 btn-mes">6</button>
             </div>
             <p class="enphasisSecond margin">También puedes elegir la fecha que prefieras</p>
-            <input type="date">
-            <button class="btn-red-c" (click)="addDataBoxFirestore()">Siguiente</button>
+            <input type="date" class="custom-input-text width-input margin" required [(ngModel)]="dateLimiteOfBox">
+            <div class="center">
+                <button class="btn-red-c" (click)="addDataBoxFirestore()">Siguiente</button>
+            </div>
         </div>
     </div>
 
     <!-- FORM DE LA VISTA FINAL CON DATOS DE LA CAJITA CREADA -->
     <div class="hide formConfimationBox">
-        <div class="star-content">
+        <div class="star-content center">
             <img class="star" src="assets/star.svg" alt="">
+            <h3 class="enphasis e-title">¡Felicidades por tu nueva cajita! </h3>
         </div>
-        <h3 class="enphasis">¡Felicidades por tu nueva cajita! </h3>
-        <p class="enphasisSecond margin">Tú código es:</p>
-        <p class="enphasis margin">44565444-ALQ1</p>
-        <p class="enphasisSecond margin">Puedes encontrarlo al revisar el estado de tu cajita.</p>
-        <p class="enphasis margin">¡Si deposítas 17.80 soles diariamente en tu cajita, conseguirás tu meta en el tiempo establecido! </p>
-        <button class="btn-red-c" (click)="listo()">Listo</button>
+        
+        <p class="enphasisSecond margin pad">Tú código es:</p>
+        <h2 class="enphasis margin">44565444-{{nameOfBox}}</h2>
+        <p class="enphasisSecond margin pad">Puedes encontrarlo al revisar el estado de tu cajita.</p>
+        <p class="enphasis margin margin2">¡Si deposítas 17.80 soles diariamente en tu cajita, conseguirás tu meta en el tiempo establecido! </p>
+        <div class="center margin pad">
+            <button class="btn-red-c" (click)="listo()">Listo</button>
+        </div>        
     </div>
 </div>

@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
     document.querySelector('.formTwo').classList.add('hide')
   }
   saveNewUser() {
+    // console.log('oooo: '+ this.titularNombre);
     this.firestoreService.newRegister(this.titularNombre, this.titularApellido, this.titularDNI, this.titularTelefono).then(() => {
       this.titularNombre = '';
       this.titularApellido = '';
