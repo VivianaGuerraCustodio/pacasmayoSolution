@@ -45,24 +45,25 @@
                             <p>{{meta.meta}}</p>
                         </div>
                     </div> -->
+                    <div class="box-content center">
+                        <div class="info-box info-color-box">
+                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
+                            <p>30 días</p>
+                            <!-- <label for="file">Downloading progress:</label> -->
+                            <progress id="file" value="0" max="100"> 0% </progress>
+                        </div>
+                        <p>Alquiler</p>
+                    </div>
                     <div class="box-content center" (click)="nextView()">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
                             <p class="num-day">10 días</p>
                             <!-- <label for="file">Downloading progress:</label> -->
-                            <progress id="file" value="50" max="100"> 32% </progress>
-                        </div>
-                        <p>Alquiler</p>
-                    </div>
-                    <div class="box-content center">
-                        <div class="info-box info-color-box">
-                            <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
-                            <p>20 días</p>
-                            <!-- <label for="file">Downloading progress:</label> -->
-                            <progress id="file" value="30" max="100"> 32% </progress>
+                            <progress id="file" value="70" max="100"> 70% </progress>
                         </div>
                         <p>Luz</p>
                     </div>
+                    
                     <div class="box-content center">
                         <div class="info-box info-color-box">
                             <img class="icon-alarma" src="../../../assets/alarma.svg" alt="image">
@@ -94,14 +95,14 @@
     <!-- DETALLES/INFORMACION DE TU CAJITA -->
     <div class="report enphasisSecond hide formDetalleBox">
         <h4 class="enphasis margin">Tu cajita</h4>
-        <h2 class="enphasis center name-box pad">Alquiler</h2>
+        <h2 class="enphasis center name-box pad">Luz</h2>
         <div class="center">
             <img src="assets/box.png" alt="caja">
         </div>
 
         <div class="center cod-deposito">
             <p class="pad">Código para depósito:</p>
-            <p class="pad codigo">{{DNI}}-alq</p>
+            <p class="pad codigo">47358313-luz</p>
         </div>
         <div class="row">
             <div class="column center">
@@ -112,16 +113,16 @@
         </div>
         <br>
         <h2 class="enphasis">Tu progreso</h2>
-        <p class="margin"> ⏰¡Estás a 2 semanas de cumplir tu meta!</p>
+        <p class="margin"> ⏰¡Estás a 10 días de cumplir tu meta!</p>
         <div class="progress-bar2">
-            <progress id="file" value="50" max="100"> 32% </progress>
+            <progress id="file" value="70" max="100"> 70% </progress>
         </div>
-        <p class="center margin">¡Has acumulado S/280 de S/600!</p>
+        <p class="center margin">¡Has acumulado S/60 de S/80!</p>
         <br>
         <h3 class="enphasis">Tus depósitos:</h3>
         <br>
         <div class="item-deposito">
-            <th>S/. 25.00</th>
+            <th>S/. 21.50</th>
             <th>12/10/2020</th>
         </div>
         <div class="item-deposito">
@@ -129,12 +130,16 @@
             <th>10/10/2020</th>
         </div>
         <div class="item-deposito">
-            <th>S/. 10.00</th>
+            <th>S/. 3.50</th>
             <th>5/10/2020</th>
         </div>
         <div class="item-deposito">
-            <th>S/. 5.00</th>
+            <th>S/. 15.00</th>
             <th>4/10/2020</th>
+        </div>
+        <div class="item-deposito">
+            <th>S/. 5.00</th>
+            <th>2/10/2020</th>
         </div>
     </div>
 
