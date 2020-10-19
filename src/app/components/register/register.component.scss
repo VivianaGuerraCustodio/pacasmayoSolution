@@ -15,3 +15,49 @@
 .register-portada {
     margin: 0 20px;
 }
+.modal-bg {
+    background-color: rgba(63, 58, 58, 0.282);
+
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    z-index: +1;
+    p {
+        color: $colorprimario2;
+    }
+    .plus {
+        font-size: 40px;
+        transform: rotate(45deg);
+        position: relative;
+        top: -49px;
+        float: right;
+        left: 190px;
+        right: 0px;
+    }
+    .box-modal {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        position: relative;
+        border-radius: 20px;
+        background: rgb(245, 242, 242);
+        width: 250px;
+        height: 330px;
+        button {
+            position: relative;
+            top: -16px;
+            left: 7px;
+            margin: 5px auto;
+        }
+        img {
+            width: 50px;
+            position: relative;
+            top: -40px;
+        }
+    }
+}

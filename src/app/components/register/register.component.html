@@ -62,12 +62,25 @@
         </div>
         <div class="enphasisSecond margin2">
             <p class="enphasis e-title">Crea tu contraseña</p>
-            <input class="custom-input-text width-input" type="password" name="" id="">
+            <input class="custom-input-text width-input" [(ngModel)]="passwordTitular" type="password" name="" id="">
             <p>Confirma tu contraseña</p>
             <input class="custom-input-text width-input" type="password" name="" id="">
             <div class="center">
                 <button (click)="saveNewUser()" class="btn-red-c margin">Registrar</button>
             </div>
+        </div>
+    </div>
+</div>
+
+<div id="redirectToSignIn" class="modal-bg center">
+    <div class="box-modal center">
+        <p (click)="hide()" class="plus">+</p>
+        <p>¡Felicidades, {{ Apellido }} <br> ahora inicia sesión<br> con tus datos registrados<br> y
+            diviertete
+            ahorrando!</p>
+        <div class="center ">
+            <img src="assets/money.png" alt="ahorro">
+            <button class="btn-red-principal " (click)="redirectToSignIn()"> Llévame a iniciar sesión </button>
         </div>
     </div>
 </div>

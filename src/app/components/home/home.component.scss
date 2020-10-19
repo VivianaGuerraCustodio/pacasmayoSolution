@@ -161,41 +161,6 @@ progress::-webkit-progress-value {
   border-radius: 9px;
 }
 
-.modal-bg {
-  background-color: rgba(63, 58, 58, 0.282);
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  box-sizing: border-box;
-  z-index: +1;
-  p {
-    color: $colorprimario2;
-  }
-  .plus {
-    font-size: 40px;
-    transform: rotate(45deg);
-    position: relative;
-    float: right;
-    left: 90px;
-    right: 2px;
-  }
-  .box-modal {
-    box-sizing: border-box;
-    position: relative;
-    border-radius: 20px;
-    background: rgb(245, 242, 242);
-    width: 250px;
-    height: 330px;
-  }
-
-  .img-box {
-    width: 200px;
-  }
-}
 
 .user {
   width: 20%;
