@@ -32,7 +32,6 @@ export class RegisterComponent implements OnInit {
     localStorage.setItem('Apellido', this.titularApellido)
     this.firestoreService.newRegister(this.titularNombre, this.titularApellido, this.titularDNI, this.titularTelefono).then(() => {
       this.titularNombre = '';
-      this.titularApellido = '';
       this.titularDNI = '';
       this.titularTelefono = '';
       document.querySelector('#redirectToSignIn').classList.remove('hide');
